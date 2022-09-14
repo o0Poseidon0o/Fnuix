@@ -1,0 +1,13 @@
+install "prettier" - Làm cho code đẹp hơn
+setting -> default -> chọn prettier
+format on save(check vào ô trống)
+auto save ->File: auto save (onfocuschange)
+tab size: 2
+
+elements:
+<h1> - <h6>
+<img>
+<p> </p>
+<a> </a>
+<ul>: List không đánh số
+<ol>: List danh sách đánh số.
