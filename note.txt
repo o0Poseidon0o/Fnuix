@@ -32,4 +32,5 @@ Súc tích (succinct)
 Tránh dư thừa (redundant)
 Không dùng các cụm như "picture of" (hình ảnh của..) hoặc "graphic of.." (đồ họa của..)
 Trong ngôn ngữ HTML, thuộc tính (attribute) có thể tạm hiểu là một loại thông tin nào đó liên quan đến element.
+"Windows + . ": chèn biểu tượng trong Windows.
 
