@@ -1,35 +1,65 @@
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
 .cv-document {
-	box-sizing: border-box;
-	border: none;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	vertical-align: baseline;
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	font-family: arial, sans-serif, tahoma;
-	font-size: 10pt;
+  box-sizing: border-box;
+  border: none;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: arial, sans-serif, tahoma;
+  font-size: 12pt;
 }
 
 .cv-page {
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
-    text-decoration: none;
-    width: 900px;
-    min-height: 900px;
-    margin: 0 auto;
-    box-shadow: 0 0 1px rgba(0,0,0,.5);
-    background-color: #fff;
-    position: relative;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+  width: 900px;
+  min-height: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  position: relative;
 
-    padding: 40px
+  padding: 40px;
+}
+.section {
+  margin: 40px;
+}
+.section--content {
+  display: inline-block;
+  margin: 20px;
+}
+.section--content p {
+  display: inline-block;
+  width: 500px;
+  height: 30px;
+}
+.section-title {
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+.section-content {
+  position: relative;
+  border-bottom: 1px solid black;
+}
+.img {
+  position: absolute;
+  top: 10px;
+  left: 500px;
+  width: 113px;
+  height: 113px;
+}
+.info {
+  font-weight: bold;
 }
