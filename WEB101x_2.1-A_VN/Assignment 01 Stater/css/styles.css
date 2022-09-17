@@ -43,15 +43,12 @@ body {
   display: flex;
 }
 .section--content.one {
- 
   width: 200px;
   text-align: justify;
   vertical-align: top;
   margin-left: 10px;
-
 }
 .section--content.two {
-
   width: 70%;
   text-align: justify;
   vertical-align: top;
@@ -118,7 +115,7 @@ li:before {
   margin: 0 auto;
 }
 .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
   background-color: red;
@@ -128,19 +125,17 @@ li:before {
   margin-left: -3px;
 }
 
-
 .container::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   right: 99.5%;
   background-color: red;
-  
 
   border-radius: 50%;
   z-index: 1;
 }
-a{
+a {
   font-weight: 600;
 }
