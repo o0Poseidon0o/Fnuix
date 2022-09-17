@@ -38,7 +38,9 @@ body {
 }
 .section--content {
   display: inline-block;
-  margin: 20px;
+  margin: 40px;
+  text-align: justify;
+  vertical-align:top;
 }
 .section--content p {
   display: inline-block;
@@ -51,7 +53,7 @@ body {
 }
 .section-content {
   position: relative;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
 }
 .img {
   position: absolute;
@@ -62,4 +64,7 @@ body {
 }
 .info {
   font-weight: bold;
+  width: 200px;
+
 }
+
