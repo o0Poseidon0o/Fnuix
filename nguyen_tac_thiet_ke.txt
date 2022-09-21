@@ -1,0 +1,19 @@
+- font chữ: Typography
+  - Chỉ sử dụng các font chữ an toàn, không chọn bất cứ font chữ kỳ lạ nào cho trang web. Có thể dử dụng font chữ từ google-fonts, … Các font chữ thường hay sử dụng: Inter, Open Sans, Roboto, Lato, Lora, Aleo, Cardo, Merriweather, …
+
+  - Sử dụng tối đa hai font chữ trong trang web
+
+  - Sử dụng font chữ phù hợp với tính cách trang web.
+
+  - Sử dụng kích thước phù hợp với từng phần tử, …
+- Màu sắc: https://github.com/yeun/open-color
+  Ý nghĩa của các màu(Nên sử dụng màu chính và màu xám)
+  - Màu đỏ: Tạo sự chú ý, tượng trưng cho sự đam mê, phấn khích và quyền lực
+
+  - Màu cam: Mức độ nhẹ hơn màu đỏ, tượng trưng cho hạnh phúc, vui vẻ và sáng tạo
+
+  - Màu vàng: tượng trưng cho niềm vui, sự tươi sáng, thông minh
+
+  - Màu xanh lá: tượng trưng cho thiên nhiên, sự hài hòa, sức khỏe
+
+  - Màu xanh lam: tượng trưng cho sự gắn kết, đáng tin cậy và chuyên nghiệp
