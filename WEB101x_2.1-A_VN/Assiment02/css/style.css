@@ -1,5 +1,5 @@
 * {
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
   box-sizing: border-box;
 }
@@ -9,6 +9,8 @@
 }
 
 #banner {
+  background-image: url(../images/banner.jpg);
+
   position: relative;
   background-size: auto;
   background-repeat: no-repeat;
@@ -21,7 +23,10 @@ section > .container {
   margin: auto;
   display: block;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-row: auto;
+  position: relative;
+  align-items: center;
   padding: 30px 50px;
 }
 
@@ -42,4 +47,48 @@ section > .container {
 .Hoten span {
   color: #f7f7f7;
   font-size: 23px;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+}
+.name {
+  font-size: 30px;
+}
+.avatar {
+  border: 10px solid white;
+  width: 300px;
+  height: 300px;
+  border: 1 solid red;
+  border-radius: 50%;
+  position: absolute;
+  left: 40%;
+}
+.thongtin {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.chungchi {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 350px;
+  font-size: 20px;
+}
+.nav {
+  width: 1170px;
+  margin: auto;
+  display: block;
+  display: flex;
+  flex-grow: 1;
+}
+.hinhanh {
+  display: flex;
+  flex-grow: 1;
+}
+a {
+  text-transform: uppercase;
 }
