@@ -4,7 +4,7 @@
   - Sử dụng tối đa hai font chữ trong trang web
   - Sử dụng font chữ phù hợp với tính cách trang web.
   - Sử dụng kích thước phù hợp với từng phần tử, …
-- Màu sắc: https://github.com/yeun/open-color
+- Màu sắc: https://yeun.github.io/open-color/
   Ý nghĩa của các màu(Nên sử dụng màu chính và màu xám)
   - Màu đỏ: Tạo sự chú ý, tượng trưng cho sự đam mê, phấn khích và quyền lực
   - Màu cam: Mức độ nhẹ hơn màu đỏ, tượng trưng cho hạnh phúc, vui vẻ và sáng tạo
