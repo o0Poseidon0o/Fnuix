@@ -64,8 +64,8 @@ section > .container {
 }
 .avatar {
   border-radius: 50%;
-  width: 10%;
-  height: 20%;
+  width: 200px;
+  height: 200px;
   position: absolute;
   top: 65%;
   left: 45%;
@@ -171,7 +171,7 @@ li {
 .certificate::before {
   content: "";
   background-color: #d6c08d;
-  width: 1100px;
+  width: 1050px;
   height: 2px;
   position: absolute;
   top: 50%;
@@ -186,7 +186,26 @@ li {
 }
 
 /*Du an*/
-
+#project .container-project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#project img {
+  width: 350px;
+  height: 250px;
+}
+.container--project {
+  display: flex;
+  justify-content: space-around;
+}
+.container--project p:first-child {
+  background-color: #74c0fc;
+  border: 2px solid #74c0fc;
+  color: white;
+  width: 100px;
+  text-align: center;
+  border-radius: 20px;
+}
 /*footer*/
 .container-footer .icon {
   width: 40px;
