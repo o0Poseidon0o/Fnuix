@@ -238,6 +238,7 @@ li {
 #project .icon {
   width: 20px;
   height: 20px;
+  color: #ced4da;
 }
 .project-table td:first-child {
   width: 100px;
