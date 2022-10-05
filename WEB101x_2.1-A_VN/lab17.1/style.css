@@ -1,19 +1,21 @@
 .bg-img1 {
+  width: 1000px;
+  height: 1000px;
   background-color: #000;
   background-size: cover;
   background-image: url("https://sohanews.sohacdn.com/k:thumb_w/640/2015/nobita-and-shizuka-wedding-1433126448706/su-that-it-biet-ve-7-doan-ket-cua-bo-truyen-doremon-bat-hu.jpg");
 }
 .bg-img2 {
+  width: 1000px;
+  height: 1000px;
   background-color: #000;
   background-size: cover;
-  background-image: url(https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000);
+  background-image: url("https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000");
 }
 .bg-img3 {
+  width: 1000px;
+  height: 1000px;
   background-color: #000;
   background-size: cover;
-  background-image: url(https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000);
-}
-#myCarousel {
-  width: 100%;
-  height: 100%;
+  background-image: url("https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000");
 }
