@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+  /*Bannner*/
+  .banner-name h1 {
+    font-size: 15px;
+  }
+  .banner-name {
+    font-size: 7px;
+    color: white;
+    position: absolute;
+  }
+}

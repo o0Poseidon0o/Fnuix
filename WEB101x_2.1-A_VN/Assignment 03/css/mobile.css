@@ -1,0 +1,31 @@
+@media (max-width: 500px) {
+  /*Bannner*/
+  .banner-name h1 {
+    font-size: 15px;
+  }
+  .banner-name {
+    font-size: 7px;
+    color: white;
+    position: absolute;
+  }
+  .avatar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    border: 5px solid white;
+  }
+  /* Menu */
+  #nav-bar .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .container--nav-title-one {
+    grid-row: 2/3;
+  }
+  .container--nav-title-two {
+    grid-column: 5/6;
+  }
+}

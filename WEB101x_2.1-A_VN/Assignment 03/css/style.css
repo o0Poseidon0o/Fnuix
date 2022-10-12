@@ -29,20 +29,25 @@ section > .container {
 }
 
 /*Bannner*/
-
-.bg-img1 {
-  background-image: url(../images/banner.jpg);
-  height: 600px;
-  background-repeat: no-repeat;
-  background-size: 100%;
+.img1 {
   position: relative;
 }
+
 .banner-name {
   text-align: center;
   color: white;
   position: absolute;
-  left: 45%;
+  left: 40%;
   bottom: 50%;
+}
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 45%;
+  border: 5px solid white;
 }
 /*Menu*/
 #nav-bar .container {
@@ -64,15 +69,7 @@ section > .container {
   border-left: 1px solid #dee2e6;
   border-right: 1px solid #dee2e6;
 }
-.avatar {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 90%;
-  left: 44%;
-  border: 5px solid white;
-}
+
 /*Thong tin*/
 #about .container {
   display: grid;
