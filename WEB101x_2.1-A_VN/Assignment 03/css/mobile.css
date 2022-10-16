@@ -1,4 +1,8 @@
 @media (max-width: 500px) {
+  * {
+    margin: 0px;
+    box-sizing: border-box;
+  }
   /*Bannner*/
   .banner-name h1 {
     font-size: 15px;
@@ -18,27 +22,28 @@
     border: 5px solid white;
   }
   /* Menu */
-  #nav-bar .container {
-    display: grid;
-   
+ 
+  .nav-tittle{
+    font-size: 23px;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    text-align: left;
+  }
+  /* footer */
+  .container-footer a {
+    display: none;
+    text-align: center;
+    text-transform: none;
+    color: #ced4da;
+    font-size: 15px;
+    padding: 2px;
+  } 
+  .container-footer .icon {
+    width: 20px;
+    height: 20px;
+    align-items: center;
+  }
 
-  }
-  .container--nav-title-one {
-    grid-column: 1/3;
-  
-  }
-  .container--nav-title-two {
-    grid-column: 1/3;
-  }
-  .contaniner-nav{
-    display: grid;
-    grid-column: 1/3;
-    border-left: none;
-    border-right: none;
-  }
-  #about .container {
-    display: flex;
-    flex: 0 0 100%;
-  }
   
 }
+

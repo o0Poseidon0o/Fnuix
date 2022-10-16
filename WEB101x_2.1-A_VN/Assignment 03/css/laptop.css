@@ -1,4 +1,4 @@
-@media (max-width: 1920px) {
+@media (max-width: 1368px) {
   /*Bannner*/
   .banner-name h1 {
     font-size: 20px;
@@ -9,5 +9,15 @@
     position: absolute;
     left: 40%;
     top: 10%;
+  }
+  .avatar {
+    display: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 90%;
+    left: 44%;
+    border: 5px solid white;
   }
 }
