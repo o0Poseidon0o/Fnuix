@@ -17,21 +17,22 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style_digi.css" />
+    <link rel="stylesheet" href="./css/mobile.css">
     <title>DigitalCV</title>
   </head>
   <body>
-    <div class="container-fluid bg-primary rounded container-body p-4 h-100">
-      <div class="row p-1">
-        <!-- Cột trái -->
-        <div class="col-md-5 p-1">
-          <!-- Goals -->
-          <div class="col bg-info my-1 p-4 rounded">
-            <h1>Goals</h1>
+    <div class="container-extend">
+      <!-- Goals -->
+      <div id="goals">
+          <h1>Goals</h1>
+          <div class="d-flex goals-content">
+            <i class="fa-solid fa-flag-checkered"></i>
+            <p class="fs-5">Đạt chứng chỉ lập trình Java</p>
+          </div>
             <div class="content-digi">
               <span class="icon"
-                ><i class="fa-solid fa-flag-checkered"></i
-              ></span>
-              <p class="fs-5">Đạt chứng chỉ lập trình Java</p>
+                ></span>
+              
             </div>
             <div class="content-digi">
               <span class="icon"
@@ -57,10 +58,10 @@
               ></span>
               <p class="fs-5">Hieu va thanh thao Linux va Windows SERVER</p>
             </div>
-          </div>
-          <!-- Scopes -->
-          <div class="col bg-info p-4 rounded">
-            <h1>Scopes</h1>
+      </div>
+      <!-- Scopes -->
+      <div id="scopes">
+        <h1>Scopes</h1>
             <div class="content-scopes row">
               <div class="col-md-6">
                 <h3>IN</h3>
@@ -84,13 +85,10 @@
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- Cột giữa -->
-        <div class="col-md-3 p-1">
-          <!-- Team -->
-          <div class="col bg-info my-1 p-4 rounded">
-            <h1>Team</h1>
+      </div>
+      <!-- Team -->
+      <div id="team">
+        <h1>Team</h1>
             <div class="row content-team">
               <div class="col-md-4">
                 <i class="bi bi-person"></i>
@@ -136,10 +134,10 @@
                 <p>Name: Nhan</p>
               </div>
             </div>
-          </div>
-          <!-- Primary -->
-          <div class="col bg-info p-4 rounded">
-            <h1>Primary</h1>
+      </div>
+      <!-- Primary -->
+      <div id="primary">
+        <h1>Primary</h1>
             <div class="row content-primary">
               <div class="col-md-3">
                 <i class="bi bi-question-circle-fill"></i>
@@ -169,12 +167,10 @@
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- Vột phải -->
-        <div class="col-md-4 p-1 my-1">
-          <div class="col bg-info p-4 rounded h-100">
-            <h1>Times line</h1>
+      </div>
+      <!-- Times line -->
+      <div id="timesline">
+        <h1>Times line</h1>
             <div class="row content-timesline">
               <div class="col-md-4 m-3 p-1 number">
                 <p>01</p>
@@ -242,8 +238,6 @@
                 </p>
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </div>
 
