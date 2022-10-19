@@ -1,43 +1,48 @@
 /* digitalCV.html */
-body{
-    padding: 20px;
+body {
+  padding: 20px;
+}
+.container-body {
+  box-shadow: 0px 0px 10px 10px #dee2e6;
+  height: 100%;
 }
 /* Goals */
 .content-digi p {
-    display: inline;
-  }
-  .content-digi {
-    margin-left: 50px;
-    border-bottom: 1px solid #dee2e6;
-  }
-  .content-digi .icon {
-    font-size: 30px;
-    color: black;
-  }
-  /* Team */
-  .content-team .bi {
-    font-size: 40px;
-    padding-left: 50px;
-  }
-  .content-team .icon {
-    width: 200px;
-  }
-  /* Primary */
-  .content-primary .bi {
-    font-size: 40px;
-    padding-left: 50px;
-  }
-  /* Times line */
-  .number {
-    background: #c901a1;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    border: 1px solid black;
-    border-radius: 50%;
-    text-align: center;
-  }
-  .number p {
-    color: #f7f7f7;
-    font-size: 20px;
-  }
+  display: inline;
+}
+.content-digi {
+  margin-left: 50px;
+  border-bottom: 1px solid #dee2e6;
+}
+.content-digi .icon {
+  font-size: 30px;
+  color: black;
+}
+
+/* Team */
+.content-team .bi {
+  font-size: 40px;
+  padding-left: 50px;
+}
+.content-team .icon {
+  width: 200px;
+}
+/* Primary */
+.content-primary .bi {
+  font-size: 40px;
+  padding-left: 50px;
+}
+/* Times line */
+.number {
+  background: #c901a1;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+}
+.number p {
+  color: #f7f7f7;
+  font-size: 20px;
+}
