@@ -22,8 +22,8 @@
     border: 5px solid white;
   }
   /* Menu */
- 
-  .nav-tittle{
+
+  .nav-tittle {
     font-size: 23px;
     border-left: 1px solid #dee2e6;
     border-right: 1px solid #dee2e6;
@@ -31,19 +31,18 @@
   }
   /* footer */
   .container-footer a {
-    display: none;
-    text-align: center;
-    text-transform: none;
-    color: #ced4da;
-    font-size: 15px;
-    padding: 2px;
-  } 
+    color: aqua;
+  }
   .container-footer .icon {
     width: 20px;
     height: 20px;
     align-items: center;
   }
-/* digitalCV */
+  .container--footer {
+    display: flex;
+    flex-direction: row;
+  }
+  /* digitalCV */
   .container-extend {
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
@@ -54,16 +53,20 @@
       "content4"
       "timesline";
   }
-  #goals p{
+  #goals p {
     display: inline-block;
   }
-  #goals .fa-solid{
+  #goals .fa-solid {
     text-align: center;
   }
 
-.goals-content{
-  flex-direction: column;
+  .goals-content {
+    flex-direction: column;
+  }
+  /* Team */
+  .team-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* Times line */
 }
-}
-
-

@@ -2,88 +2,84 @@
 :root {
   --main-radius: 5px;
   --main-padding: 5px;
+  --main-content: #f2f6f5;
 }
 body {
   padding: 20px;
 }
-.container-extend{
+.container-extend {
   box-shadow: 0px 0px 10px 10px #dee2e6;
   height: 100%;
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-  grid-template-rows: repeat(2,0.5fr);
-  grid-template-areas: 
-  "content1 content3 timesline"
-  "content2 content4 timesline"  ;
+  grid-template-columns: 3fr 2fr 1fr;
+  grid-template-rows: repeat(2, 0.5fr);
+  grid-template-areas:
+    "content1 content3 timesline"
+    "content2 content4 timesline";
   grid-gap: 0.2rem;
   background-color: blue;
 }
 /* Goals */
-#goals{
+#goals {
   grid-area: content1;
   background-color: aqua;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: 5px;
+  background-color: var(--main-content);
 }
 
-.content-digi p {
-  display: inline;
-}
 .content-digi {
   margin-left: 50px;
   border-bottom: 1px solid #dee2e6;
 }
-#goals .icon {
+#goals .fa-solid {
   font-size: 30px;
   color: black;
 }
 /* Scopes */
-#scopes{
+#scopes {
   grid-area: content2;
-  background-color: aqua;
+  background-color: var(--main-content);
   border-radius: var(--main-radius);
   padding: var(--main-padding);
   margin: 5px;
 }
 
 /* Team */
-#team{
+#team {
   grid-area: content3;
-  background-color: aqua;
+  background-color: var(--main-content);
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: 5px;
-
 }
-.content-team .bi {
+#team .bi {
   font-size: 40px;
-  padding-left: 50px;
 }
 .content-team .icon {
   width: 200px;
 }
 /* Primary */
-#primary{
+#primary {
   grid-area: content4;
-  background-color: aqua;
+  background-color: var(--main-content);
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: 5px;
 }
-.content-primary .bi {
+#primary .bi {
   font-size: 40px;
-  padding-left: 50px;
 }
 /* Times line */
-#timesline{
+#timesline {
   grid-area: timesline;
-  background-color: aqua;
+  background-color: var(--main-content);
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: 5px;
 }
-.number {
+#timesline .number {
   background: #c901a1;
   width: 40px;
   height: 40px;
@@ -96,5 +92,6 @@ body {
   color: #f7f7f7;
   font-size: 20px;
 }
-/* Reponsive */
-
+.content-timesline {
+  border-bottom: 1px dashed green;
+}
