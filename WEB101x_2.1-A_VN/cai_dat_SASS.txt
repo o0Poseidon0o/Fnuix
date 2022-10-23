@@ -1,0 +1,3 @@
+- cai dat nodejs.
+- cai dat git
+- go lenh sass tai thu muc sass: sass ./app.scss ./css/app.css --watch

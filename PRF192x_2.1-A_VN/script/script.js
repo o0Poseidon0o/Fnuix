@@ -8,7 +8,7 @@ let firstname = "Jonas";
 console.log(firstname);
 console.log(js);
 js = "nhan";
-js = "test";
+
 console.log(js);
 const a = 23;
 
