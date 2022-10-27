@@ -1,10 +1,11 @@
+@import "../node_modules/bootstrap/scss/functions";
+$light: coral;
 $main--color: #a8e890;
 $second--color: #82cd47;
 $text--color: white;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/functions";
 
 * {
   margin: 10px;
