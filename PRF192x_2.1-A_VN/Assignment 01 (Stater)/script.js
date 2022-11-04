@@ -37,7 +37,10 @@ submitBtn.addEventListener("click", function () {
   };
   if (data.id === "") {
     alert("ID must unique!");
-  } else if (data.age <= 1 && data.age >= 15) {
-    alert("Age must be between 1 and 15!");
   }
+  if (data.age < 1 && data.age > 15) {
+    alert("Phai tu 1 den 15");
+  }
+  console.log(data);
+  console.log(data.length);
 });

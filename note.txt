@@ -35,3 +35,5 @@ Trong ngôn ngữ HTML, thuộc tính (attribute) có thể tạm hiểu là m�
 "Windows + . ": chèn biểu tượng trong Windows.
 
 Font chu: fonts.goole.com   type-scale.com
+
+path: https://bennettfeely.com/clippy/

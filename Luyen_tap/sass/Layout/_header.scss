@@ -1,0 +1,29 @@
+#header {
+  background-image: linear-gradient(
+      rgba(49, 48, 48, 0.171),
+      rgba(73, 71, 71, 0.123)
+    ),
+    url("https://png.pngtree.com/thumb_back/fw800/background/20190220/ourmid/pngtree-technology-cool-digital-light-effect-business-background-image_6960.jpg");
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: $text-color;
+    font-size: 80px;
+  }
+  p {
+    color: $text-color;
+    font-size: 30px;
+  }
+}
+.avatar {
+  width: 300px;
+  border: 10px solid white;
+  border-radius: 50%;
+  &:hover {
+    width: 500px;
+  }
+}
