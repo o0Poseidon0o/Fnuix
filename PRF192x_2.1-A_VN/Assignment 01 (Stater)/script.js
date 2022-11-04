@@ -26,9 +26,9 @@ submitBtn.addEventListener("click", function () {
     id: idInput.value,
     name: nameInput.value,
     age: parseInt(ageInput.value),
-    type: typeInput.value,
+    Type: typeInput.value,
     weight: weightInput.value,
-    length: lengthInput.value,
+    Length: lengthInput.value,
     color: colorInput.value,
     breed: breedInput.value,
     vacci: vaccinatedInput.checked,
@@ -37,10 +37,28 @@ submitBtn.addEventListener("click", function () {
   };
   if (data.id === "") {
     alert("ID must unique!");
+  } else if(data.age < 1 || data.age > 15){
+    alert("Age must be between 1 and 15!");
+  }else if(data.weight<1 || data.weight>15){
+    alert('Weight must be between 1 and 15!')
+  }else if(data.Length<1 || data.Length>100){
+    alert('Length must be between 1 and 100!')
+  }else if(data.Type==="Select Type"){
+    alert('Please select Type!')
+  }else if(data.breed==="Select Breed"){
+    alert('Please select Breed!')
   }
-  if (data.age < 1 && data.age > 15) {
-    alert("Phai tu 1 den 15");
-  }
+ 
   console.log(data);
-  console.log(data.length);
+  console.log(typeof( data.Type))
+  console.log(data.Length);
 });
+// Them thu cung vao danh sach
+const petArr=[];
+
+const validate = validateData(data)
+if(validate){
+  petArr.push(data);
+  clearInput();
+  renderTableData(petArr);
+}
