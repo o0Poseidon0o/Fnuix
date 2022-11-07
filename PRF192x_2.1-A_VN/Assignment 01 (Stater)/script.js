@@ -6,7 +6,7 @@ const sidebarEl = document.getElementById("sidebar");
 sidebarTitleEl.addEventListener("click", function () {
   sidebarEl.classList.toggle("active");
 });
-
+const petArr = [];
 // Khai báo biến để lấy các Element.
 const submitBtn = document.getElementById("submit-btn");
 const idInput = document.getElementById("input-id");
@@ -35,30 +35,43 @@ submitBtn.addEventListener("click", function () {
     dewo: dewormedInput.checked,
     sterilized: sterilizedInput.checked,
   };
-  if (data.id === "") {
-    alert("ID must unique!");
-  } else if(data.age < 1 || data.age > 15){
-    alert("Age must be between 1 and 15!");
-  }else if(data.weight<1 || data.weight>15){
-    alert('Weight must be between 1 and 15!')
-  }else if(data.Length<1 || data.Length>100){
-    alert('Length must be between 1 and 100!')
-  }else if(data.Type==="Select Type"){
-    alert('Please select Type!')
-  }else if(data.breed==="Select Breed"){
-    alert('Please select Breed!')
-  }
- 
-  console.log(data);
-  console.log(typeof( data.Type))
-  console.log(data.Length);
-});
-// Them thu cung vao danh sach
-const petArr=[];
+  // Kiem tra du lieu nhap vao
+  const validate = function () {
+    if (data.id === "") {
+      alert("ID must unique!");
+    } else if (data.age < 1 || data.age > 15) {
+      alert("Age must be between 1 and 15!");
+    } else if (data.weight < 1 || data.weight > 15) {
+      alert("Weight must be between 1 and 15!");
+    } else if (data.Length < 1 || data.Length > 100) {
+      alert("Length must be between 1 and 100!");
+    } else if (data.Type === "Select Type") {
+      alert("Please select Type!");
+    } else if (data.breed === "Select Breed") {
+      alert("Please select Breed!");
+    }
+  };
 
-const validate = validateData(data)
-if(validate){
-  petArr.push(data);
-  clearInput();
-  renderTableData(petArr);
-}
+  const validateData = validate(data);
+  if (validateData) {
+    petArr.push(data);
+    clearInput();
+    renderTableData(petArr);
+  }
+  // Ham xoa du lieu dua ve ban dau
+  const clearInput = () => {
+    idInput.value = "";
+    nameInput.value = "";
+    ageInput.value = "";
+    weightInput.value = "";
+    lengthInput.value = "";
+    breedInput.value = "Select Breed";
+    dewormedInput.checked = false;
+    sterilizedInput.checked = false;
+    typeInput.value = "Select type";
+    vaccinatedInput.checked = false;
+    colorInput.value = "#000000";
+  };
+  console.log(petArr);
+  console.log(data);
+});
