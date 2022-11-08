@@ -20,6 +20,37 @@ const breedInput = document.getElementById("input-breed");
 const vaccinatedInput = document.getElementById("input-vaccinated");
 const dewormedInput = document.getElementById("input-dewormed");
 const sterilizedInput = document.getElementById("input-sterilized");
+
+// Kiem tra du lieu nhap vao
+function validateData(data) {
+  if (data.id === "") {
+    alert("ID must unique!");
+  } else if (data.age < 1 || data.age > 15) {
+    alert("Age must be between 1 and 15!");
+  } else if (data.weight < 1 || data.weight > 15) {
+    alert("Weight must be between 1 and 15!");
+  } else if (data.Length < 1 || data.Length > 100) {
+    alert("Length must be between 1 and 100!");
+  } else if (data.Type === "Select Type") {
+    alert("Please select Type!");
+  } else if (data.breed === "Select Breed") {
+    alert("Please select Breed!");
+  }
+}
+// Ham xoa du lieu dua ve ban dau
+const clearInput = () => {
+  idInput.value = "";
+  nameInput.value = "";
+  ageInput.value = "";
+  weightInput.value = "";
+  lengthInput.value = "";
+  breedInput.value = "Select Breed";
+  dewormedInput.checked = false;
+  sterilizedInput.checked = false;
+  typeInput.value = "Select type";
+  vaccinatedInput.checked = false;
+  colorInput.value = "#000000";
+};
 // Người dùng bấm vào submit để nhập thông tin thú cưng.
 submitBtn.addEventListener("click", function () {
   const data = {
@@ -35,43 +66,14 @@ submitBtn.addEventListener("click", function () {
     dewo: dewormedInput.checked,
     sterilized: sterilizedInput.checked,
   };
-  // Kiem tra du lieu nhap vao
-  const validate = function () {
-    if (data.id === "") {
-      alert("ID must unique!");
-    } else if (data.age < 1 || data.age > 15) {
-      alert("Age must be between 1 and 15!");
-    } else if (data.weight < 1 || data.weight > 15) {
-      alert("Weight must be between 1 and 15!");
-    } else if (data.Length < 1 || data.Length > 100) {
-      alert("Length must be between 1 and 100!");
-    } else if (data.Type === "Select Type") {
-      alert("Please select Type!");
-    } else if (data.breed === "Select Breed") {
-      alert("Please select Breed!");
-    }
-  };
-
-  const validateData = validate(data);
-  if (validateData) {
+  const validate = validateData(data);
+  // Nhạp gia tri 1 petArr;
+  if (validate) {
     petArr.push(data);
     clearInput();
     renderTableData(petArr);
   }
-  // Ham xoa du lieu dua ve ban dau
-  const clearInput = () => {
-    idInput.value = "";
-    nameInput.value = "";
-    ageInput.value = "";
-    weightInput.value = "";
-    lengthInput.value = "";
-    breedInput.value = "Select Breed";
-    dewormedInput.checked = false;
-    sterilizedInput.checked = false;
-    typeInput.value = "Select type";
-    vaccinatedInput.checked = false;
-    colorInput.value = "#000000";
-  };
+
   console.log(petArr);
   console.log(data);
 });
