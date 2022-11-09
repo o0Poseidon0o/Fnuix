@@ -76,7 +76,7 @@ function renderTableData(a) {
   theadEl.innerHTML = "";
   const rowthead = document.createElement("tr");
   rowthead.innerHTML = `
-                     <th scope="col">ID</th>
+              <th scope="col">ID</th>
 							<th scope="col">Name</th>
 							<th scope="col">Age</th>
 							<th scope="col">Type</th>

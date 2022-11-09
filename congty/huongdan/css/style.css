@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+* {
+  font-family: "IBM Plex Serif", serif;
+}
+
+body {
+  margin: 2px;
+  padding: 5px;
+}
+
+/* header */
+header img {
+  width: 200px;
+  margin: 0px auto;
+}
+header h1 {
+  color: #0d357a;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.table__masobanhanh {
+  width: 100%;
+  height: 100%;
+}
+.table__masobanhanh td:last-child {
+  text-align: left;
+}
+.table__masobanhanh td:first-child {
+  font-weight: 600;
+}
+.table__masobanhanh tr,
+.table__masobanhanh td {
+  border: 2px solid black;
+}
+
+/* Menu */
+.nav__bar {
+  margin: 5px;
+  text-align: center;
+  font-size: 40px;
+  background-color: #679dfb;
+  color: #0d357a;
+}
+.nav__bar a {
+  text-decoration: none;
+}
+
+main {
+  margin: 5px;
+}
+
+.container__huongdan {
+  align-items: center;
+  text-align: center;
+}
+.container__huongdan img {
+  width: 100%;
+}
+.container__huongdan a {
+  display: block;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #679dfb;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .container__huongdan a {
+    font-size: 10px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

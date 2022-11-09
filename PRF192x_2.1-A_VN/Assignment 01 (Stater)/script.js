@@ -35,6 +35,8 @@ function validateData(data) {
     alert("Please select Type!");
   } else if (data.breed === "Select Breed") {
     alert("Please select Breed!");
+  } else {
+    return true;
   }
 }
 // Ham xoa du lieu dua ve ban dau
@@ -47,10 +49,11 @@ const clearInput = () => {
   breedInput.value = "Select Breed";
   dewormedInput.checked = false;
   sterilizedInput.checked = false;
-  typeInput.value = "Select type";
+  typeInput.value = "Select Type";
   vaccinatedInput.checked = false;
   colorInput.value = "#000000";
 };
+
 // Người dùng bấm vào submit để nhập thông tin thú cưng.
 submitBtn.addEventListener("click", function () {
   const data = {
@@ -77,3 +80,5 @@ submitBtn.addEventListener("click", function () {
   console.log(petArr);
   console.log(data);
 });
+// Hien thi danh sach thu cung
+function renderTableData(petArr) {}
