@@ -33,13 +33,13 @@ function validateData(data) {
   } else if (checkID() === true) {
     alert("Bị trùng ID nhập ID khác");
     idInput.focus();
-  } else if (data.age < 1 || data.age > 15) {
+  } else if (data.age < 1 || data.age > 15 || !data.age) {
     alert("Age must be between 1 and 15!");
     ageInput.focus();
-  } else if (data.weight < 1 || data.weight > 15) {
+  } else if (data.weight < 1 || data.weight > 15 || !data.weight) {
     alert("Weight must be between 1 and 15!");
     weightInput.focus();
-  } else if (data.Length < 1 || data.Length > 100) {
+  } else if (data.Length < 1 || data.Length > 100 || !data.Length) {
     alert("Length must be between 1 and 100!");
     lengthInput.focus();
   } else if (data.Type === "Select Type") {

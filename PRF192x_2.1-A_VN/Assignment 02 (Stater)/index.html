@@ -14,10 +14,6 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
       integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA=="
@@ -52,15 +48,27 @@
 
         <ul class="list-unstyled components">
           <li class="active">
-            <a href="#">
+            <a href="./index.html">
               <i class="bi bi-house"></i>
               Home
             </a>
           </li>
           <li class="">
-            <a href="#">
-              <i class="bi bi-file-earmark-person"></i>
-              About
+            <a href="./page/edit.html">
+              <i class="bi bi-pencil-square"></i>
+              Edit
+            </a>
+          </li>
+          <li class="">
+            <a href="./page/search.html">
+              <i class="bi bi-search"></i>
+              Search
+            </a>
+          </li>
+          <li class="">
+            <a href="./page/breed.html">
+              <i class="bi bi-list-ul"></i>
+              Breed
             </a>
           </li>
         </ul>
@@ -226,7 +234,7 @@
                   Show Healthy Pet
                 </button>
                 <button type="button" class="btn btn-warning" id="BMI-btn">
-                  Calculate BMI
+                  BMI
                 </button>
               </form>
             </div>
@@ -252,46 +260,7 @@
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody id="tbody">
-              <!-- <tr>
-                <th scope="row">P001</th>
-                <td>Tom</td>
-                <td>3</td>
-                <td>Cat</td>
-                <td>5 kg</td>
-                <td>50 cm</td>
-                <td>Tabby</td>
-                <td>
-                  <i class="bi bi-square-fill" style="color: red"></i>
-                </td>
-                <td><i class="bi bi-check-circle-fill"></i></td>
-                <td><i class="bi bi-check-circle-fill"></i></td>
-                <td><i class="bi bi-check-circle-fill"></i></td>
-                <td>01/03/2022</td>
-                <td>
-                  <button type="button" class="btn btn-danger">Delete</button>
-                </td>
-              </tr> -->
-              <!-- <tr>
-                <th scope="row">P002</th>
-                <td>Tyke</td>
-                <td>5</td>
-                <td>Dog</td>
-                <td>3 kg</td>
-                <td>40 cm</td>
-                <td>Mixed Breed</td>
-                <td>
-                  <i class="bi bi-square-fill" style="color: green"></i>
-                </td>
-                <td><i class="bi bi-x-circle-fill"></i></td>
-                <td><i class="bi bi-x-circle-fill"></i></td>
-                <td><i class="bi bi-x-circle-fill"></i></td>
-                <td>02/03/2022</td>
-                <td>
-                  <button type="button" class="btn btn-danger">Delete</button>
-                </td> -->
-              </tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
           </table>
         </div>
       </div>
@@ -303,6 +272,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="./script/storage.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
