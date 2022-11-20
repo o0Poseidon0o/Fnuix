@@ -7,6 +7,8 @@ sidebarTitleEl.addEventListener("click", function () {
   sidebarEl.classList.toggle("active");
 });
 const petArr = [];
+petArr = JSON.parse(getFromStorage());
+console.log(petArr);
 // Khai báo biến để lấy các Element.
 const submitBtn = document.getElementById("submit-btn");
 const idInput = document.getElementById("input-id");

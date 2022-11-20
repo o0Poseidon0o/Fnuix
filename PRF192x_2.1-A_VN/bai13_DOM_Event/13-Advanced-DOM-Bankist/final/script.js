@@ -320,19 +320,19 @@ message.classList.add('cookie-message');
 message.innerHTML =
   'We use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
 
-// header.prepend(message);
-header.append(message);
-// header.append(message.cloneNode(true));
+// header.prepend(message); Them vao dau
+header.append(message); Them vao cuoi
+// header.append(message.cloneNode(true)); Xuat hien ca dau va cuoi voi cloneNode(true)
 
-// header.before(message);
-// header.after(message);
+// header.before(message); Them truoc
+// header.after(message); Them sau
 
 // Delete elements
 document
   .querySelector('.btn--close-cookie')
   .addEventListener('click', function () {
     // message.remove();
-    message.parentElement.removeChild(message);
+    message.parentElement.removeChild(message); sẽ trả về thẻ HTML đang chứa thẻ hiện tại, hoặc trả về null nếu không có thẻ nào chứa thẻ hiện tại. 
   });
 
   
@@ -394,7 +394,7 @@ const alertH1 = function (e) {
   alert('addEventListener: Great! You are reading the heading :D');
 };
 
-h1.addEventListener('mouseenter', alertH1);
+h1.addEventListener('mouseenter', alertH1); // giong hu hover trong CSS
 
 setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 
