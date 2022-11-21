@@ -6,9 +6,9 @@ const sidebarEl = document.getElementById("sidebar");
 sidebarTitleEl.addEventListener("click", function () {
   sidebarEl.classList.toggle("active");
 });
+
 const petArr = [];
-petArr = JSON.parse(getFromStorage());
-console.log(petArr);
+
 // Khai báo biến để lấy các Element.
 const submitBtn = document.getElementById("submit-btn");
 const idInput = document.getElementById("input-id");
@@ -102,10 +102,12 @@ submitBtn.addEventListener("click", function () {
     clearInput();
     renderTableData(petArr);
   }
-
+  saveToStorage("petArr", [petArr]);
+  getFromStorage("petArr");
   console.log(petArr);
   console.log(data);
 });
+
 // Hien thi danh sach thu cung
 function renderTableData(a) {
   tableBodyEl.innerHTML = "";
