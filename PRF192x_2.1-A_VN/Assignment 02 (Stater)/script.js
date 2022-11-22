@@ -102,7 +102,7 @@ submitBtn.addEventListener("click", function () {
     clearInput();
     renderTableData(petArr);
   }
-  saveToStorage("petArr", [petArr]);
+  saveToStorage("petArr", petArr);
   getFromStorage("petArr");
   console.log(petArr);
   console.log(data);
