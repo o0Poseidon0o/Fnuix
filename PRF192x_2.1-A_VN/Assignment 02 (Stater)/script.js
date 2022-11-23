@@ -1,4 +1,5 @@
 "use strict";
+const petArr = [];
 
 // Toggle class active when click on navbar
 const sidebarTitleEl = document.getElementById("sidebar-title");
@@ -6,8 +7,6 @@ const sidebarEl = document.getElementById("sidebar");
 sidebarTitleEl.addEventListener("click", function () {
   sidebarEl.classList.toggle("active");
 });
-
-const petArr = [];
 
 // Khai báo biến để lấy các Element.
 const submitBtn = document.getElementById("submit-btn");
@@ -151,6 +150,8 @@ function checkID(petId) {
 function deletePet(petId) {
   if (confirm("Are you sure?")) {
     petArr.splice(checkID(petId), 1);
+    saveToStorage("petArr", petArr);
+    getFromStorage("petArr");
     renderTableData(petArr);
   }
 }
@@ -179,3 +180,32 @@ calcBMI.addEventListener("click", function () {
   }
   renderTableData(petArr);
 });
+// Khi chọn Type input
+typeInput.addEventListener("click", renderBeed);
+// Hàm hiển thị các loại thú
+
+function renderBeed() {
+  // breedInput.innerHTML = "<option>Select Breed</option>";
+  if (typeInput.value === "Dog") {
+    const breedDogs = breedArr.filter(
+      (breedItem) => breedItem.typeBreed === "Dog"
+    );
+    console.log(breedDogs);
+    breedDogs.forEach(function (breedItem) {
+      const option = document.createElement("option");
+      option.innerHTML = `${breedItem.nameBreed}`;
+      breedInput.appendChild(option);
+    });
+  } else if (typeInput.value === "Cat") {
+    const breedCats = breedArr.filter(
+      (breedItem) => breedItem.typeBreed === "Cat"
+    );
+    breedCats.forEach(function (breedItem) {
+      const option = document.createElement("option");
+      option.innerHTML = `${breedItem.nameBreed}}`;
+      breedInput.appendChild(option);
+    });
+  }
+}
+console.log(breedArr);
+console.log(petArr);
