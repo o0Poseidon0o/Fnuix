@@ -1,9 +1,6 @@
 "use strict";
 
-const submitBtn = document.getElementById("submit-btn");
-const breedInput = document.getElementById("input-breed");
 const typeBreedinput = document.getElementById("input-type");
-const tableBodyEl = document.getElementById("tbody");
 
 // Kiểm tra dữ liệu nhập
 function validateData(data) {
