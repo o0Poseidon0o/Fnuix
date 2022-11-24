@@ -76,7 +76,7 @@ function editPet(petId) {
   idInput.value = petId;
   nameInput.value = pet.name;
   ageInput.value = pet.age;
-  typeInput.value = pet.type;
+  typeInput.value = pet.Type;
   breedInput.value = `${pet.breed}`;
   weightInput.value = pet.weight;
   lengthInput.value = pet.Length;
@@ -92,7 +92,7 @@ submitBtn.addEventListener("click", function () {
     id: idInput.value,
     name: nameInput.value,
     age: Number(ageInput.value),
-    type: typeInput.value,
+    Type: typeInput.value,
     weight: weightInput.value,
     Length: lengthInput.value,
     color: colorInput.value,
@@ -112,3 +112,17 @@ submitBtn.addEventListener("click", function () {
     editForm.classList.add("hide");
   }
 });
+// Ham xoa du lieu dua ve ban dau
+const clearInput = () => {
+  idInput.value = "";
+  nameInput.value = "";
+  ageInput.value = "";
+  weightInput.value = "";
+  lengthInput.value = "";
+  breedInput.value = "Select Breed";
+  dewormedInput.checked = false;
+  sterilizedInput.checked = false;
+  typeInput.value = "Select Type";
+  vaccinatedInput.checked = false;
+  colorInput.value = "#000000";
+};
