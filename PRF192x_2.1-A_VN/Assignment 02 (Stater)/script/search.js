@@ -59,6 +59,7 @@ findBtn.addEventListener("click", function () {
     findPetArr = findPetArr.filter((pet) => pet.sterilized === true);
   }
   renderTableSearch(findPetArr);
+  clearInput();
 });
 // // Hàm hiển trị thời gian
 // function displayTime(date){
@@ -68,3 +69,14 @@ findBtn.addEventListener("click", function () {
 //     return JSON.parse(JSON.stringify(date));
 //   }
 // }
+const clearInput = () => {
+  idInput.value = "";
+  nameInput.value = "";
+  
+  breedInput.value = "Select Breed";
+  dewormedInput.checked = false;
+  sterilizedInput.checked = false;
+  typeInput.value = "Select Type";
+  vaccinatedInput.checked = false;
+  
+};

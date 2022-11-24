@@ -130,7 +130,7 @@ calcBMI.addEventListener("click", function () {
 });
 // Khi chọn Type input
 typeInput.addEventListener("click", renderBeed);
-// Hàm hiển thị các loại thú
+
 
 console.log(breedArr);
 console.log(petArr);
