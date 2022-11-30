@@ -37,7 +37,7 @@ const myPromise = new Promise(function ExcutorFunc(thanhcong, thatbai) {
     const dataThatBai = "may man lan sao";
     thatbai(dataThatBai);
   }
-});
+}); //===> sẻ tự động trả về 1 promise
 console.log(myPromise);
 // gọi phương thức then
 const Promise_2 = myPromise.then(
@@ -49,3 +49,16 @@ const Promise_2 = myPromise.then(
   }
 );
 console.log(Promise_2);
+// FETCH API
+const myResponse = fetch("https://geocode.xyz/52.508,13.381?geoit=json");
+// fetch sẽ trả về 1 promise
+console.log(myResponse);
+// để xử lý các trạng thái ta sẽ dùng các phương thức của promise
+myResponse
+  .then((res) => {
+    // Phương thức .json sẽ trả về 1 promise và ở trạng thái thành công
+    // nó sẽ trả về kết quả là data ta mong muốn123245
+    return res.json();
+  })
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
