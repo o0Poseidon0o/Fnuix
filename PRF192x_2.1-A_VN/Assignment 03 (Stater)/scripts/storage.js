@@ -1,5 +1,5 @@
 "use strict";
-
+const userArr = getFromStorage("userArr");
 // Hàm lấy dữ liệu
 function getFromStorage(key) {
   return JSON.parse(localStorage.getItem(key));

@@ -6,6 +6,7 @@ const inputPassword = document.getElementById("input-password");
 const inputPasswordConfirm = document.getElementById("input-password-confirm");
 const btnSubmit = document.getElementById("btn-submit");
 const userArr = [];
+
 //  Sự kiện đăng ký
 btnSubmit.addEventListener("click", function () {
   // Lấy dư liệu từ người dùng
