@@ -5,7 +5,6 @@ const inputUsername = document.getElementById("input-username");
 const inputPassword = document.getElementById("input-password");
 const inputPasswordConfirm = document.getElementById("input-password-confirm");
 const btnSubmit = document.getElementById("btn-submit");
-const userArr = [];
 
 //  Sự kiện đăng ký
 btnSubmit.addEventListener("click", function () {
@@ -29,19 +28,29 @@ btnSubmit.addEventListener("click", function () {
     window.location.assign("../pages/login.html");
   }
 });
-// Hàm kiểm tra hông tin người dùng
+// Hàm kiểm tra thông tin người dùng
 function validate(user) {
   const isValidate = false;
   // không có trường hợp bỏ trống
   if (user.firstname.trim().length === 0) {
     alert("Tên không được để trống!!!");
     return isValidate;
-  } else if (inputPasswordConfirm === "") {
-    alert("Vui lòng nhập Confirm Password!!!");
+  } else if (user.lastname.trim().length === 0) {
+    alert("Phải nhập Tên!!!");
+  } else if (user.username.trim().length === 0) {
+    alert("Phải nhập User đăng nhập!!!");
   } else if (user.password.length <= 8) {
     alert("Password phải có nhiều hơn 8 ký tự!!!");
+  } else if (inputPasswordConfirm === "") {
+    alert("Vui lòng nhập Confirm Password!!!");
+  } else if (user.password != inputPasswordConfirm.value) {
+    alert("Password phải giống nhau!!!");
+  } else if (
+    // Kiểm tra từng phần tử trong mảng username có bị trùng không!!!
+    !userArr.every((item) => (item.username !== user.username ? true : false))
+  ) {
+    alert("Username đã tồn tại đặt User khác !!!");
   } else {
     return true;
   }
 }
-console.log(userArr);
