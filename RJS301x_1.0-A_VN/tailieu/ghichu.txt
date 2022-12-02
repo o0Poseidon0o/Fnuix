@@ -1,0 +1,2 @@
+npx create-react-app app-name : tạo dự án
+“cd app-name” => “npm start”: chạy dự án
