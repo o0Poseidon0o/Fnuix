@@ -1,7 +1,7 @@
 "use strict";
 // Điều kiện này để khi người dùng chưa đăng nhập thì không thể dùng
 if (userActive) {
-  const newContainer = document.getElementById("new-container");
+  const newContainer = document.getElementById("news-container");
   const btnPrew = document.getElementById("btn-prev");
   const pageNum = document.getElementById("page-num");
   const btnNext = document.getElementById("btn-next");
@@ -27,7 +27,8 @@ if (userActive) {
         throw new Error(data.message);
       }
       // Gọi hàm hiển thị list News
-      displayNewList();
+      displayNewList(data);
+      console.log(data);
     } catch (err) {
       alert("Error" + err.message);
     }
@@ -64,18 +65,23 @@ if (userActive) {
     // Tạo html để hiển thị
     data.articles.forEach(function (article) {
       html += `
-      <div class ='new-content'>
-        <div class='img-banner'>
-          <img src=${
-            article.urlToImage ? article.urlToImage : "no_image_available.jpg"
-          } alt='img />
-        </div>
-        <div class='content'>
-          <h4>${article.title}</h4>
-          <p>${article.description}</p>
-          <button><a href=${article.url} target='_blank>View</a>'</button>
-        </div>
-      </div>`;
+      <div class="card flex-row flex-wrap">
+            <div class="card mb-3" style="">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src=${article.urlToImage} class="card-img" alt="MIT researchers uncover ‘unpatchable’ flaw in Apple M1 chips - TechCrunch">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">${article.title}</h5>
+                    <p class="card-text">${article.description}</p>
+                    <a href=${article.url} class="btn btn-primary">View</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      `;
     });
     newContainer.innerHTML = html;
   }

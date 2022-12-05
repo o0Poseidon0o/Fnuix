@@ -16,7 +16,7 @@ if (userActive) {
       userArr[index] = userActive;
       saveTostorage("userArr", userArr);
       alert("cài đặt thành công !!!");
-      inputPagesSize.value;
+      inputPagesSize.value='';
       inputCatefory.value = "General";
     }
   });

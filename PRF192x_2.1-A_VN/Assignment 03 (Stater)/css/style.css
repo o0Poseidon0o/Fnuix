@@ -3970,7 +3970,7 @@ input[type="button"].btn-block {
   padding: 1.25rem; }
 
 .card-img {
-  width: 100%;
+  width: 50%;
   border-radius: calc(0.25rem - 1px); }
 
 .card-img-top {
