@@ -67,7 +67,7 @@ if (userActive) {
       alert("Error" + err.message);
     }
   }
-  function displayNewList() {
+  function displayNewList(data) {
     totalResults = data.totalResults;
     checkBtnPrev();
     checkBtnNext();

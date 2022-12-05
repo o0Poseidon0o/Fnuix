@@ -15,7 +15,7 @@ if (userActive) {
       const res = await fetch(
         // Tham khảo tại trang https://newsapi.org/docs/endpoints/sources
         // key API phải đăng kí để lấy 1 ngày chỉ đăng nhập đươc 100 lần
-        `https://newsapi.org/v2/top-headlines?country=${country}&category=${userActive.category}&page=${page}&apiKey=a806ca6e1c5f409396eee65e0c33ab99`
+        `https://newsapi.org/v2/top-headlines?country=${country}&category=${userActive.category}&pageSize=${userActive.pageSize}&page=${page}&apiKey=a806ca6e1c5f409396eee65e0c33ab99`
       );
       const data = await res.json();
       // Kiểm tra lỗi 100 lần request
