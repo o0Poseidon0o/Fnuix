@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+:root {
+  --main-color: #2f6357;
+  --second-color: #6be3c7;
+  --third-color: #b2e8db;
+  --text-color: #ffffff;
+}
+* {
+  padding: 3px;
+}
+body {
+  font-family: "IBM Plex Serif", serif;
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+/* ------------------------Header-------------------------------- */
+header {
+  text-align: center;
+}
+
+/* ------------------------Main content lesson---------------------- */
+#main-contentlesson {
+  text-align: center;
+  background-color: var(--second-color);
+}
+.btn {
+  font-size: 30px;
+}
+.hidden {
+  display: none;
+}
+.doom p {
+  display: inline;
+}
+/* ------------------------footer------------------------------------- */
+#footer {
+  text-align: center;
+}
