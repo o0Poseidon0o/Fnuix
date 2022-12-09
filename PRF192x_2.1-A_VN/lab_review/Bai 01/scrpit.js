@@ -44,3 +44,7 @@ if (num >= 12) {
 console.log(12 + 3 + 10 * 3); // ==> 15 + 30 = 45
 
 // tinh tong cua 2 so sô chan ;
+const country = "vietnam";
+const continent = "Asia";
+const population = 99;
+console.log(country, continent, population);
