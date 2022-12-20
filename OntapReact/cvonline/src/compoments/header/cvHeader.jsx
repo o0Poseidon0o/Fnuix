@@ -1,10 +1,11 @@
 import React from "react";
-
-function cvHeader() {
+import "./cvHeader.css";
+function CvHeader() {
+  console.log(CvHeader);
   return (
-    <div>
+    <div className="cv-header">
       <h1>Toi ten la Nhan</h1>
     </div>
   );
 }
-export default cvHeader;
+export default CvHeader;

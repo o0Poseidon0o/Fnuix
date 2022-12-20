@@ -1,9 +1,12 @@
 import React from "react";
-
+import CvHeader from "./compoments/header/cvHeader";
+import Cvmenu from "./compoments/menu/CvMenu";
 function App() {
+  console.log(Cvmenu);
   return (
     <div>
-      <h1>Hello world !!!!!</h1>
+      <CvHeader title="kiem tra props" />
+      <Cvmenu></Cvmenu>
     </div>
   );
 }
