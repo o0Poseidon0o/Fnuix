@@ -38,12 +38,12 @@ function App() {
   //     </div>
   //   </div>
   // );
-  return(
+  return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense />
       <Expenses items={expenses}></Expenses>
     </div>
-  )
+  );
 }
 
 export default App;
