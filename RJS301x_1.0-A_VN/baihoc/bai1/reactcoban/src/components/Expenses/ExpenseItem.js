@@ -12,7 +12,7 @@ const ExpenseItem = (props) => {
         <ExpenseDate date={props.date} />
         {/* Tất cả props trong file ExpenseDate gồm month, day, year */}
         <div className="expense-item__description">
-          <h2>{props.title}</h2>
+          <h2>{props.title}</h2>0
           {/* props nọi dung được truyền và từ file khác vào */}
           <div className="expense-item__price">${props.amount}</div>
         </div>
