@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // // Đọc file JSON
 // // --------------Cách 1------------------
 // const navBar = require("../../../data/navBar.json");
@@ -8,7 +9,6 @@ import navBar from "../../data/navBar.json";
 const NavBarItem = () => {
   return navBar.map((item) => (
     <div className="col" key={item.style}>
-      <FontAwesomeIcon icon="fa-solid fa-car" />
       <FontAwesomeIcon icon={`fa-solid ${item.icon}`}></FontAwesomeIcon>
       {item.type}
     </div>

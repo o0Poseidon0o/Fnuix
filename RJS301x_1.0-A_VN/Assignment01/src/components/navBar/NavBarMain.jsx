@@ -3,17 +3,17 @@ import NavBarItem from "./NavBarItem";
 import "./NavBarMain.css";
 function NavBarmain() {
   return (
-    <div className="container-fluid bg-primary">
-      <div className="row">
+    <div className="container-fluid container-navbar">
+      <div className="row m-3">
         <div className="col-md-9 text-light fs-2">BOOKING WEBSITE</div>
         <div className="col-md-3 ">
           <button className="btn btn-light m-1 text-primary">Registered</button>
           <button className="btn btn-light m-1 text-primary">Login</button>
         </div>
       </div>
-      <div className="row text-light">
+      <div className="row text-light menu-navbar">
         <NavBarItem></NavBarItem>
-        <div>
+        <div className="navbar-content">
           <h1>A lifetime of discounts? It's Genius</h1>
           <p>
             Get rewarded for your travels - unlock instant savings of 10% or
