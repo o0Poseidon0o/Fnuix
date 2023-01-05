@@ -13,14 +13,14 @@ function NavBarmain() {
       </div>
       <div className="row text-light menu-navbar">
         <NavBarItem></NavBarItem>
-        <div className="navbar-content">
-          <h1>A lifetime of discounts? It's Genius</h1>
-          <p>
-            Get rewarded for your travels - unlock instant savings of 10% or
-            more with a free account
-          </p>
-          <button className="btn btn-primary">Sign/Register</button>
-        </div>
+      </div>
+      <div className="navbar-content text-light ">
+        <h1>A lifetime of discounts? It's Genius</h1>
+        <p>
+          Get rewarded for your travels - unlock instant savings of 10% or more
+          with a free account
+        </p>
+        <button className="btn btn-primary">Sign/Register</button>
       </div>
     </div>
   );

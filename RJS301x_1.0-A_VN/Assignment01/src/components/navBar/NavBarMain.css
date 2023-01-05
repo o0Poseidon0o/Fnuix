@@ -2,6 +2,7 @@
   background-color: blue;
   padding: 30px;
   height: 100%;
+  position: relative;
 }
 .menu-navbar {
   text-align: center;

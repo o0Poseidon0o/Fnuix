@@ -11,7 +11,7 @@
   },
   {
     "type": "Car rentals",
-    "icon": "car",
+    "icon": "fa-car",
     "active": false
   },
   {

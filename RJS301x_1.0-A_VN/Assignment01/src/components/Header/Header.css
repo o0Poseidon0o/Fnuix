@@ -1,3 +1,10 @@
 .form-header {
-  background-color: aqua;
+  display: flex;
+  border: 5px solid red;
+  border-radius: 10px;
+  position: absolute;
+  background-color: aliceblue;
+  top: 34%;
+  left: 30%;
+  justify-content: space-around;
 }
