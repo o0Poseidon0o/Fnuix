@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import navBar from "../../data/navBar.json";
 const NavBarItem = () => {
   return navBar.map((item) => (
-    <div className="col" key={item.style}>
+    <div className="col fs-5" key={item.style}>
       <FontAwesomeIcon icon={`fa-solid ${item.icon}`}></FontAwesomeIcon>
       {item.type}
     </div>
