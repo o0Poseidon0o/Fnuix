@@ -7,6 +7,9 @@
   top: 34%;
   left: 30%;
   justify-content: space-around;
-  width: 800px;
+  width: 900px;
   align-items: center;
+}
+.form-control {
+  border: hidden;
 }
