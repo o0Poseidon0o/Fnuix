@@ -1,0 +1,21 @@
+/* Thiết lập hiển thị cho date picker */
+.date-picker {
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, 0);
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Định dạng các nút */
+.date-picker > div > button {
+  background-color: #fff;
+  border: 1px solid #0e6ba8;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  color: #9c9c9c;
+  transform: translate(0, -50%);
+  border-radius: 5px;
+}

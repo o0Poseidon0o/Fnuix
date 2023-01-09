@@ -1,0 +1,42 @@
+/* Các button */
+.header-description button {
+  color: #fff;
+  background-color: #0e6ba8;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* Phần tiêu dề & mô tả */
+.header-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+/* Thanh tìm kiếm */
+.header-search-bar {
+  background-color: #fff;
+  border: 2px solid #fdca40;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+  max-width: 50rem;
+  color: #c0c0c0;
+  padding: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header-search-bar input {
+  border: none;
+  color: #c0c0c0;
+}
+
+.header-search-bar input:focus {
+  outline: none;
+}

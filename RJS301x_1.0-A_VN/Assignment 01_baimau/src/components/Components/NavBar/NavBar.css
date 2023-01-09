@@ -1,0 +1,27 @@
+.navbar-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 0;
+}
+
+.navbar-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.navbar-header button {
+  color: #1864ab;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.navbar-header a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.register {
+  text-align: center;
+  line-height: 3rem;
+}
+.register form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.register input {
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 15rem;
+  font-weight: lighter;
+  font-size: 0.8rem;
+}
+
+.register button {
+  color: #fff;
+  background-color: #0e6ba8;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: lighter;
+  font-size: 0.8rem;
+}

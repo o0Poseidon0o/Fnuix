@@ -1,0 +1,11 @@
+.image {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* Kiểu của mỗi img */
+.image img {
+  width: 19.5rem;
+  height: 16rem;
+  margin: 0.1rem;
+}

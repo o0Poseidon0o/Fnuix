@@ -1,0 +1,8 @@
+/*Trình bày các thành phố*/
+.cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 3rem !important;
+}

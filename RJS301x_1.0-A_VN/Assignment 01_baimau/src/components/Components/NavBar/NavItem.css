@@ -1,0 +1,17 @@
+.nav-item {
+  font-weight: lighter;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Trạng thái active */
+.nav-item.active {
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+}
+
+.nav-item:hover,
+.nav-item:active {
+  cursor: pointer;
+}
