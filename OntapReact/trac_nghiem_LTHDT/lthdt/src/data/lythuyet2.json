@@ -1,0 +1,69 @@
+[
+  {
+    "number": "cau 1",
+    "question": "Hàm khởi tạo mặc định là hàm cùng tên với tên lớp và _____________.",
+    "answer": "Có 0 tham số"
+  },
+  {
+    "number": "cau 2",
+    "question": "Để xóa đối tượng ra khỏi bộ nhớ, hàm nào sau đây sẽ được gọi?",
+    "answer": " Hàm hủy"
+  },
+  {
+    "number": "cau 3",
+    "question": "Khi khai báo lớp trong C++, hành vi của đối tượng được khai báo như là:",
+    "answer": "Hàm hay phương thức"
+  },
+  {
+    "number": "cau 4",
+    "question": "Câu lệnh nào sau đây được sử dụng để lớp A khai báo lớp B là bạn của nó:",
+    "answer": " friend class B"
+  },
+  {
+    "number": "cau 5",
+    "question": "Hàm destructor trả về giá trị gì?",
+    "answer": "Không trả về giá trị nào cả"
+  },
+  {
+    "number": "cau 6",
+    "question": "Mục đích xây dựng lớp (class) trong phương pháp lập trình hướng đối tượng là:",
+    "answer": "Đóng gói dữ liệu, sử dụng lại các lớp, tạo cơ chế mô hình hóa các đối tượng trong thế giới thực."
+  },
+  {
+    "number": "cau 7",
+    "question": "Để xóa đối tượng a thuộc lớp A ta sử dụng câu lệnh nào trong những câu lệnh sau đây?",
+    "answer": "delete a;"
+  },
+  {
+    "number": "cau 8",
+    "question": "Khai báo lớp (class) nào sau đây là hợp lệ?",
+    "answer": "class A { int x; }"
+  },
+  {
+    "number": "cau 9",
+    "question": "Quan hệ “bạn” nào sau đây là SAI?",
+    "answer": "Lớp là bạn của hàm tự do"
+  },
+  {
+    "number": "cau 10",
+    "question": "Khi ra khỏi một phạm vi (block), đối tượng thuộc phạm vi đó sẽ",
+    "answer": "Được hủy (xóa khỏi bộ nhớ)"
+  },
+  {
+    "number": "cau 11",
+    "question": "Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:    
+    class MyClass{
+     private:
+     int x;
+     public:
+     void Print() {
+     cout<<x;
+     }
+    };
+    int main(){
+     MyClass x;
+     cout<<x; return 0;
+    }",
+    "answer": "Lỗi"
+  }
+]

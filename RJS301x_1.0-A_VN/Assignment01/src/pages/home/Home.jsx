@@ -1,4 +1,5 @@
 import React from "react";
+import EndFooter from "../../components/Footer/endFooter";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import City from "../../components/Maincontent/city";
@@ -15,6 +16,7 @@ const Home = () => {
       <Hotel></Hotel>
       <Hotelstyles></Hotelstyles>
       <Footer></Footer>
+      <EndFooter></EndFooter>
     </div>
   );
 };
