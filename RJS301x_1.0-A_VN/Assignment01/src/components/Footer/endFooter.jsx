@@ -1,14 +1,13 @@
 import React from "react";
-import endFooter from "../../data/footer.json";
 import "./endFooter.css";
 
-const EndFooter = () => {
+const EndFooter = (props) => {
   return (
-    <div className="container col_endfooter">
+    <div className="container  col_endfooter">
       <ul>
-        {endFooter.map((item) => (
+        {props.item.map((item) => (
           <li>
-            <a href="#">{item.col_values}</a>
+            <a href="#">{item}</a>
           </li>
         ))}
       </ul>

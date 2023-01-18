@@ -4,7 +4,7 @@ import Hotelstyle from "./hotelstyle";
 
 const Hotelstyles = () => {
   return (
-    <div className="container">
+    <div className="container p-1">
       <h3>Homes guests love</h3>
       <div className="d-flex justify-content-around">
         {hotelstylelist.map((hotels) => {

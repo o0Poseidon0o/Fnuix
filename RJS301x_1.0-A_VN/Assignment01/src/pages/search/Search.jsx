@@ -1,7 +1,13 @@
+import SearchList from "../../components/Search/searchList";
+import SearchPopop from "../../components/Search/searchPopop";
+
 const Search = () => {
   return (
-    <div>
-      <h1>Search Page</h1>
+    <div className="container">
+      <div className="row">
+        <SearchPopop></SearchPopop>
+        <SearchList></SearchList>
+      </div>
     </div>
   );
 };
