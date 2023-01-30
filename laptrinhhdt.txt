@@ -1,0 +1,1042 @@
+1. Một lớp (class) được xem như là khung mẫu (template) của
+
+Đối tượng (object)
+2. Lớp cơ sở trừu tượng (abstract class) có thể tạo ra bao nhiêu đối tượng? 0
+3. Trong C++, khi một đối tượng được tạo ra bởi từ khóa new sẽ được lưu ở đâu trong bộ nhớ? heap
+4. Từ nào sau đây KHÔNG phải là từ khóa trong C++? extends
+5. Constructor được sử dụng để làm gì? Khởi tạo đối tượng và khởi tạo dữ liệu thành viên
+6. Khai báo lớp (class) nào sau đây là hợp lệ? class A { int x; };
+7. Thành phần dữ liệu public của một lớp có thể truy cập bởi? Hàm tự do, hàm thành viên, hàm bạn
+8. Hàm xây dựng (constructor) không có tham số được gọi là hàm xây dựng gì? Mặc định
+9. Hàm destructor trả về giá trị gì? Không trả về giá trị nào cả
+10. Lớp (class) chứa thành phần nào sau đây:Dữ liệu thành viên và hàm thành viên
+11. Khi khai báo một đối tượng thuộc một lớp đã có, hàm nào của đối tượng sẽ được gọi? Hàm xây dựng tương ứng
+12. Toán tử được quá tải phải được định nghĩa như:
+
+	1. Static member functions
+
+	2. Non- static member functions
+
+	3. Friend Functions
+	2 và 3
+13. Giả sử ta có lớp Rational (phân số), để tái định nghĩa toán tử hậu tố ++, chỉ thị nào sau đây là đúng? Rational operator++(int& dummy)
+14. Giả sử lớp A thừa kế từ lớp B, cả A và B đều không có hàm khởi tạo mặc định. Để gọi hàm khởi tạo mặc định của lớp B từ A ta sử dụng câu lệnh: A(): B() { ... }
+15. Phát biểu nào sau đây là đúng về đa thừa kế? Một lớp kế thừa từ hai lớp trở lên
+16. Trong C++, khai báo prototype hàm nào sau đây là sai? int Area(int a=0,int b)
+17. Phương pháp thiết kế trên xuống (top-down) thường được sử dụng trong phương pháp lập trình nào? Có cấu trúc
+18. Quan hệ “bạn” nào sau đây là SAI? Lớp là bạn của hàm tự do
+19. Giả sử ta có box1 và box2 là hai đối tượng thuộc lớp Box. Ý nghĩa của câu lệnh box1=box2 là gì? Sao chép thuộc tính của box2 vào box1
+20. Để hàm tự do có thể truy cập thành phần dữ liệu private của một lớp, phát biểu nào sau đây là đúng? Hàm tự do phải là bạn của lớp
+21. Phát biểu nào sau đây là sai về tính đóng gói (encapsulation) trong lập trình hướng đối tượng? Đóng gói dữ liệu làm cho chương trình ngắn gọn
+22. #include<iostream>
+ usingnamespacestd;
+
+class MyClass{
+
+ private:
+
+ int x;
+
+ public:
+
+ void Print() {
+
+ cout<<x;
+
+ }
+
+};
+
+int main(){
+
+ MyClass x;
+
+ x.Print(); return 0;
+
+}
+Số nguyên ngẫu nhiên
+23. Giả sử ta có khai báo: Car *pcar; câu lệnh nào sau đây được sử dụng để giải phóng bộ nhớ cho pcar? delete[]Car;
+24. Con trỏ this được sử dụng để tham chiếu đến: Dữ liệu thành viên và hàm thành viên của một đối tượng
+25. Giả sử tồn tại lớp Data, để quá tải toán tử xuất << thì câu lệnh nào sau đây là đúng? ostream &operator<<(ostream &output, const Data &dataToPrint)
+26. Để quá tải toán tử += ta cần: Quá tải toán tử +=
+27. #include <iostream>
+
+using namespace std;
+
+class sample
+
+{
+
+public:
+
+sample(int i) : m_i(i) { }
+
+public:
+
+int operator()(int i = 0) const
+
+{
+
+return m_i + i;
+
+}
+
+operator int () const
+
+{
+
+return m_i;
+
+}
+
+private:
+
+int m_i;
+
+friend int g(const sample&);
+
+};
+
+int f(char c)
+
+{
+
+return c;
+
+}
+
+int main()
+
+{
+
+sample f(2);
+
+cout << f(2);
+
+return 0;
+
+}
+4
+28. #include <iostream>
+
+using namespace std;
+
+class Test2
+
+{
+
+ int y;
+
+};
+
+class Test
+
+{
+
+ int x;
+
+ Test2 t2;
+
+public:
+
+ operator Test2 () { return t2; }
+
+ operator int () { return x; }
+
+};
+
+void fun ( int x) { cout << "fun(int) called"<<endl; }
+
+void fun ( Test2 t ) { cout << "fun(Test 2) called"<<endl; }
+
+int main()
+
+{
+
+ Test t;
+
+ fun(t);
+
+ return 0;
+
+}
+Lỗi
+29.#include <iostream>
+
+ using namespace std;
+
+ int main()
+
+ {
+
+ int i, j;
+
+ j = 10;
+
+ i = (j++, j + 100, 999 + j);
+
+ cout << i;
+
+ return 0;
+
+ }
+1010
+30. Toán tử nào sau đây thường được quá tải như hàm toàn cục? Toán tử <<
+31. #include<iostream>
+ usingnamespacestd;
+ classB
+ {
+ public:
+ ~B()
+ {
+ cout <<"B";
+ }
+ };
+ classA:publicB
+ {
+ public:
+ ~A()
+ {
+ cout <<"A";
+ }
+ };
+ intmain()
+ {
+ A a;
+ return0;
+ }
+AB
+32. Lỗi của đoạn chương trình sau là gì?
+
+classFruit
+{
+public:
+ Fruit(intid)
+ {
+ }
+};
+classApple:publicFruit
+{
+public:
+ Apple()
+ {
+ }
+};
+Định nghĩa hàm khởi tạo của lớp Apple không đúng
+33. #include<iostream>
+
+using namespace std;
+
+class Base
+
+{
+
+public:
+
+ int fun() { cout << "Base::fun() called"; }
+
+ int fun(int i) { cout << "Base::fun(int i) called"; }
+
+};
+
+class Derived: public Base
+
+{
+
+public:
+
+ int fun() { cout << "Derived::fun() called"; }
+
+};
+
+int main()
+
+{
+
+ Derived d;
+
+ d.fun(5);
+
+ return 0;
+
+}
+
+Lỗi biên dịch
+34. #include<iostream>
+ usingnamespacestd;
+
+class Teacher {
+
+            public:
+
+                        staticint n;
+
+            public :
+
+                        Teacher (){ cout<<" "<<n++ ; }
+
+};
+
+int Teacher::n = 0;
+
+void main() {
+
+            Teacher t1;
+
+            Teacher t2;
+
+            Teacher t3;
+
+            cout<<" "<<t1.n ;
+
+            getch();
+
+}
+Xuất ra màn hình: 0 1 2 3
+35. #include<iostream>
+ usingnamespacestd;
+ classTempClass
+ {
+ public:
+ inti;
+ TempClass()
+ {
+ inti =5;
+ }
+ };
+ intmain()
+ {
+ TempClass temp(2); return 0;
+ }
+
+Lỗi vì lớp TempClass không có hàm khởi tạo có đối số là số nguyên
+36. #include<iostream>
+ usingnamespacestd;
+ classA
+ {
+ public:
+ ints;
+ A(intnewS)
+ {
+ s = newS;
+ }
+ voidprint()
+ {
+ cout << s;
+ }
+ };
+ intmain()
+ {
+ A a;
+ a.print();
+
+ return 0;
+ }
+
+Lỗi vì lớp A không có hàm khởi tạo mặc định
+37. Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:
+
+#include<iostream>
+ usingnamespacestd;
+ classTest
+ {
+ public:
+ intx;
+ Test()
+ {
+ cout <<"Test";
+ }
+ };
+ intmain()
+ {
+ Test test;
+ cout << test.x;
+
+ return 0;
+ }
+Xuất ra màn hình số nguyên bất kỳ
+38. Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:
+
+#include<iostream>
+#include<string>
+usingnamespacestd;
+classPerson
+{
+public:
+ voidprintInfo()
+ {
+ cout << getInfo() << endl;
+ }
+ string getInfo()
+ {
+ return"Person";
+ }
+};
+classStudent:publicPerson
+{
+public:
+ string getInfo()
+ {
+ return"Student";
+ }
+};
+intmain()
+{
+ Person().printInfo();
+ Student().printInfo();
+
+ return 0;
+}
+
+Person Person
+39. Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:
+
+#include<iostream>
+ usingnamespacestd;
+ 
+ classA
+ {
+ public:
+ A()
+ {
+ t();
+ cout <<"i from A is "<< i << endl;
+ }
+ 
+ voidt()
+ {
+ setI(20);
+ }
+ 
+ virtualvoidsetI(inti)
+ {
+ this->i =2* i;
+ }
+ 
+ inti;
+ };
+ 
+ classB:publicA
+ {
+ public:
+ B()
+ {
+ // cout << "i from B is " << i << endl;
+ }
+ 
+ virtualvoidsetI(inti)
+ {
+ this->i =3* i;
+ }
+ };
+ 
+ intmain()
+ {
+ A* p =newB();
+ 
+ return0;
+ }
+
+Hiển thị chuỗi: "i from A is 40".
+
+40. Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:
+
+#include<iostream>
+
+using namespace std;
+
+class Base
+
+{
+
+public:
+
+ virtual void show() { cout<<" In Base "; }
+
+};
+
+class Derived: public Base
+
+{
+
+public:
+
+ void show() { cout<<"In Derived "; }
+
+};
+
+int main(void)
+
+{
+
+ Base *bp = new Derived;
+
+ bp->Base::show();
+
+ return 0;
+
+}
+In Base
+41. Thuật ngữ nào sau đây không phải là đặc trưng của lập trình hướng đối tượng? Exceptions
+42. Phương pháp lập trình theo lối tuần tự được gọi là phương pháp lập trình: Tuyến tính
+43. Đặc trưng nào sau đây được xem như là sự che dấu dữ liệu (data hiding)? Encapsulation
+44. Tính chất nào cho phép lớp kế thừa thuộc tính hoặc phương thức của lớp khác? Thừa kế
+45. Câu lệnh nào sau đây được sử dụng để lớp A khai báo lớp B là bạn của nó: friend class B;
+46. Khi cài đặt phương thức bên ngoài phạm vi, lớp dùng chỉ thị nào? ::
+47. Khi khai báo lớp trong C++, hành vi của đối tượng được khai báo như là: Hàm hay phương thức
+48. Hàm khởi tạo mặc định là hàm cùng tên với tên lớp và _____________. Có 0 tham số
+49. Hàm thành viên tĩnh có thể truy cập đến thành phần dữ liệu được khai báo. static 
+50. Để xóa đối tượng a thuộc lớp A ta sử dụng câu lệnh nào trong những câu lệnh sau đây? delete a
+51. Một đối tượng là thể hiện của: lớp
+52. Có bao nhiêu toán tử được phép quá tải trong danh sách các toán tử sau đây?  '[]'
+53. Toán tử nào sau đây KHÔNG được phép quá tải? ::
+54. Đơn thừa kế là gì? Một lớp kế thừa từ một lớp khác.
+55. Phát biểu nào sau đây là đúng về lớp cơ sở trừu tượng (abstract class)? Là lớp không thể tạo ra thể hiện của nó
+56. Ngôn ngữ nào sau đây không hỗ trợ lập trình hướng đối tượng? Pascal
+57. Trong C++, để cấp phát bộ nhớ động ta dùng toán tử: new
+58. Phát biểu nào sau đây là đúng về hàm hủy (destructor)? Hàm hủy dùng để xóa đối tượng khỏi bộ nhớ.
+59. Câu lệnh nào sau đây là đúng khi khai báo hàm khởi tạo sao chép cho lớp X? X(const X &x);
+60. Thành phần dữ liệu protected của một lớp có thể truy cập bởi. Lớp dẫn xuất
+61.  Phát biểu nào sau đây là SAI về hàm xây dựng? Hàm có thể trả về một giá trị.
+62. Khi ra khỏi một phạm vi (block), đối tượng thuộc phạm vi đó sẽ. Được hủy (xóa khỏi bộ nhớ)
+63. #include<iostream>
+ usingnamespacestd;
+
+class MyClass{
+
+ private:
+
+ int x;
+
+ public:
+
+ void Print() {
+
+ cout<<x;
+
+ }
+
+};
+
+int main(){
+
+ MyClass x;
+
+ cout<<x; return 0;
+
+}
+Lỗi
+64. Phát biểu nào sau đây là SAI khi nói về lớp? Lớp được tạo ra bởi đối tượng.
+65. Giả sử ta có lớp Rational (phân số), để tái định nghĩa toán tử nhập >>, chỉ thị nào sau đây cần được khai báo bên trong lớp Rational? friend istream& operator>>(istream& stream, Rational& rational);
+66. include<stdlib.h>
+
+#include<stdio.h>
+
+#include<iostream>
+
+using namespace std;
+
+class Test {
+
+ int x;
+
+public:
+
+ void* operator new(size_t size);
+
+ void operator delete(void*);
+
+ Test(int i) {
+
+ x = i;
+
+ cout << "Constructor called \n";
+
+ }
+
+ ~Test() { cout << "Destructor called \n"; }
+
+};
+
+void* Test::operator new(size_t size)
+
+{
+
+ void *storage = malloc(size);
+
+ cout << "new called \n";
+
+ return storage;
+
+}
+
+void Test::operator delete(void *p )
+
+{
+
+ cout<<"delete called \n";
+
+ free(p);
+
+}
+
+int main()
+
+{
+
+ Test *m = new Test(5);
+
+ delete m;
+
+ return 0;
+
+}
+new called
+Constructor called
+
+Destructor called
+
+delete called
+67. Toán tử nào sau đây phải được quá tải như hàm thành viên của lớp? Toán tử chuyển (ép) kiểu
+68. Giả sử ta có lớp Rational (phân số), định nghĩa hàm nào sau đây được sử dụng để chuyển một Rational (phân số) sang kiểu số thực? operator double()
+69. Toán tử nào sau đây được mặc định quá tải bởi trình biên dịch? Toán tử =
+70. Hàm quá tải toán tử được gọi khi nào? Khi sử dụng toán tử
+71. class X {
+
+private:
+
+ int M;
+
+ void Func2();
+
+public:
+
+ X(int iM = 0);
+
+ void Func1();
+
+ ~X();
+
+};
+
+class Y : public X {
+
+private:
+
+ float F;
+
+public:
+
+ Y();
+
+ Y(float iF, int iM);
+
+ void Func3();
+
+ ~Y();
+
+};
+Func1() và Func3()
+72. #include<iostream>
+
+using namespace std;
+
+class base {
+
+ int arr[10];
+
+};
+
+class b1: public base { };
+
+class b2: public base { };
+
+class derived: public b1, public b2 {};
+
+int main(void)
+
+{
+
+ cout << sizeof(derived);
+
+ return 0;
+
+}
+80
+73. #include<iostream>
+ usingnamespacestd;
+ classB
+ {
+ public:
+ B()
+ {
+ cout <<"B";
+ }
+ };
+ classA:publicB
+ {
+ public:
+ A()
+ {
+ cout <<"A";
+ }
+ };
+ intmain()
+ {
+ A a;
+ return0;
+ }
+BA
+74.  Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:
+
+#include<iostream>
+ usingnamespacestd;
+ classFoo
+ {
+ public:
+ intx;
+
+ inty;
+ Foo()
+ {
+ x =10;
+ y =10;
+ }
+ voidp()
+ {
+ intx =20;// local variable
+ cout <<"x is "<< x <<" ";
+ cout <<"y is "<< y << endl;
+ }
+ };
+ intmain()
+ {
+ Foo foo;
+ foo.p();
+ return0;
+ }
+x is 20 y is 10
+75. #include<iostream>
+ usingnamespacestd;
+
+class AAA {
+
+            int na;
+
+            public :
+
+                        AAA(int a=0) {
+
+                                    na = a ;
+
+                        }
+
+                        ~AAA(){cout<<" "<<na ;}
+
+};
+
+void Func(AAA aaa){
+
+            AAA *a1 = new AAA(3);
+
+            delete a1;
+
+}
+
+void main() {
+
+            AAA aaa(4);
+
+            Func(aaa);
+
+}
+
+Xuất ra màn hình: 3 4 4
+
+76. Kết quả biên dịch, thực thi chương trình sau:
+
+#include<iostream>
+ usingnamespacestd;
+
+class ABC {                                                                                         int n;   public:
+
+ ABC(int x){n=x; }                                                                             void Print(){ cout<<n; }
+
+};
+
+void main() {
+
+ABC t;
+
+t.Print();
+
+}
+Lỗi biên dịch.
+77. Hàm nào trong đoạn chương trình sau đây được định nghĩa bên trong lớp A?
+
+classA
+{
+public:
+ A()
+ {
+ value =0;
+ }
+ A(double);
+ doublef1()
+ {
+ returnvalue;
+ }
+ doublef2();
+private:
+ doublevalue;
+};
+A(), f1()
+
+78. #include<iostream>
+
+using namespace std;
+
+class Base {
+
+public:
+
+ Base() { cout<<"Constructor: Base"<<endl; }
+
+ virtual ~Base() { cout<<"Destructor : Base"<<endl; }
+
+};
+
+class Derived: public Base {
+
+public:
+
+ Derived() { cout<<"Constructor: Derived"<<endl; }
+
+ ~Derived() { cout<<"Destructor : Derived"<<endl; }
+
+};
+
+int main() {
+
+ Base *Var = new Derived();
+
+ delete Var;
+
+ return 0;
+
+}
+Constructor: Base
+Constructor: Derived
+
+Destructor : Derived
+
+Destructor : Base
+79.Cho biết kết quả xuất hiện trên màn hình sau khi thực thi đoạn chương trình sau:
+
+#include <iostream>
+
+using namespace std;
+
+class A
+
+{
+
+public:
+
+ virtual void fun();
+
+};
+
+class B
+
+{
+
+public:
+
+ void fun();
+
+};
+
+int main()
+
+{
+
+ int a = sizeof(A), b = sizeof(B);
+
+ if (a == b) cout << "a == b";
+
+ else if (a > b) cout << "a > b";
+
+ else cout << "a < b";
+
+ return 0;
+
+}
+ a > b
+80. #include<iostream>
+ #include<string>
+ usingnamespacestd;
+
+ classA
+ {
+ public:
+ string toString()
+ {
+ return"A";
+ }
+ };
+ classB:publicA
+ {
+ public:
+ string toString()
+ {
+ return"B";
+ }
+ };
+ intmain()
+ {
+ B b;
+ cout << static_cast<A>(b).toString() << b.toString() << endl;
+ return0;
+ }
+AB
+
+81. Các phương thức của cùng một lớp có cùng tên, khác số tham số và kiểu tham số được gọi là gì? Overloading
+82. Khi các phương thức được định nghĩa trong một lớp có thể được gọi bởi các đối tượng thuộc lớp đó. Điều này được gọi là: Gửi thông điệp cho đối tượng
+83. Mục đích xây dựng lớp (class) trong phương pháp lập trình hướng đối tượng là: Đóng gói dữ liệu, sử dụng lại các lớp, tạo cơ chế mô hình hóa các đối tượng trong thế giới thực.
+84. Lớp (class) chứa thành phần nào sau đây: Dữ liệu thành viên và hàm thành viên
+85. Hàm destructor trả về giá trị gì? Không trả về giá trị nào cả
+86. Thành phần dữ liệu public của một lớp có thể truy cập bởi. Hàm tự do, hàm thành viên, hàm bạn
+87. Giả sử ta có lớp Rational (phân số), để tái định nghĩa toán tử tiền tố --, chỉ thị nào sau đây là đúng? Rational operator--()
+88. Định nghĩa hai hàm thành viên của một lớp với tên giống nhau trong lập trình hướng đối tượng được gọi là: Overloading
+89. Giả sử lớp GeometricObject thừa kế từ lớp Circle và p là con trỏ thuộc lớp GeometricObject. Để ép kiểu p sang Circle ta sử dụng câu lệnh. Circle* p1 = dynamic_cast<Circle*>(p);
+90. Hàm thuần ảo (pure virtual function) là hàm. Phải được định nghĩa lại ở lớp dẫn xuất (lớp con)
+91. Phát biểu nào sau đây là đúng về sự đóng gói?  Là cơ chế ràng buộc giữa dữ liệu và thao tác trên dữ liệu đó thành một thể thống nhất
+92. Các thành phần chung của đối tượng cung cấp một ___________ điều khiển các thành phần riêng của đối tượng. giao diện
+93. Giả sử ta muốn xây dựng hàm dùng để truy cập thuộc tính gioitinh có kiểu logic của một lớp. Khai báo hàm nào sau đây là hợp lý? bool getGioitinh()
+94. Để một hàm có thể truy cập các thuộc tính thuộc thành phần private của lớp A thì hàm này phải là. Hàm bạn của lớp A
+95. Phát biểu nào sau đây là SAI về hàm xây dựng? Hàm có thể trả về một giá trị.
+96. Để hàm tự do có thể truy cập thành phần dữ liệu private của một lớp, phát biểu nào sau đây là đúng? Hàm tự do phải là bạn của lớp
+97. Phát biểu nào sau đây là SAI khi nói về lớp? Lớp được tạo ra bởi đối tượng.
+98. Thành phần dữ liệu protected của một lớp có thể truy cập bởi. Lớp dẫn xuất
+99. Giả sử ta có khai báo: Car *pcar; câu lệnh nào sau đây được sử dụng để giải phóng bộ nhớ cho pcar? delete[]Car;
+100. Giả sử y và z là hai đối tượng thuộc lớp Data với toán tử += đã được quá tải. Câu lệnh nào sau đây tương đương với câu lệnh y + = z? y.operator+=( z )
+101. Hàm nào sau đây là hàm thuần ảo? virtual double getArea() = 0;
+102. include<iostream>
+usingnamespacestd;
+
+classB
+{
+public:
+ B() { };
+ intk;
+};
+
+intmain()
+{
+ B b;
+ cout << b.k << endl;
+ return0;
+}
+Xuất ra màn hình số nguyên bất kỳ
+
+103. Định nghĩa hàm khởi tạo (constructor) nào sau đây là đúng nhất?     {
+
+                                                                                                             ...        }
+Là hàm có tên trùng với tên lớp, được gọi ngay sau khi khai báo đối tượng hoặc con trỏ đối tượng, có thể kế thừa.
+104.  #include<iostream>
+ usingnamespacestd;
+ classTempClass
+ {
+ public:
+ inti;
+ TempClass()
+ {
+ inti =5;
+ }
+ };
+ intmain()
+ {
+ TempClass temp(2); return 0;
+ }
+Lỗi vì lớp TempClass không có hàm khởi tạo có đối số là số nguyên
+104. #include<iostream>
+
+#include<string>
+ usingnamespacestd;
+ classC
+ {
+ public:
+ string toString()
+ {
+ return"C";
+ }
+ };
+ classB:publicC
+ {
+ string toString()
+ {
+ return"B";
+ }
+ };
+ classA:publicB
+ {
+ string toString()
+ {
+ return"A";
+ }
+ };
+ voiddisplayObject(C* p)
+ {
+ cout << p->toString();
+ }
+
+ intmain()
+ {
+ A a; B b; C c;                                                                                        displayObject(&a);
+
+ displayObject(&a);
+
+ displayObject(&b);
+
+ displayObject(&c);
+ return0;
+ }
+CCC
+105. #include<iostream>
+
+using namespace std;
+
+class Base
+
+{
+
+public:
+
+ virtual void show() { cout<<" In Base "; }
+
+};
+
+class Derived: public Base
+
+{
+
+public:
+
+ void show() { cout<<"In Derived "; }
+
+};
+
+int main(void)
+
+{
+
+ Base *bp = new Derived;
+
+ bp->Base::show();
+
+ return 0;
+
+}
+In Base
+106. Toán tử nào sau đây không được phép quá tải (tái định nghĩa)? ?:
