@@ -1,7 +1,15 @@
+import React from "react";
+import DetailHotel from "../../components/DetailHotel/DetailHotel";
+import NavBarmain from "../../components/navBar/NavBarMain";
+import Footer from "../../components/Footer/Footer";
+
 const Detail = () => {
   return (
     <div>
-      <h1>Detail Page</h1>
+      <NavBarmain></NavBarmain>
+
+      <DetailHotel></DetailHotel>
+      <Footer></Footer>
     </div>
   );
 };

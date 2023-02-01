@@ -1,6 +1,7 @@
 import React from "react";
 import searchs from "../../data/search.json";
 import SearchItem from "./searchItem";
+
 const SearchList = () => {
   // Lấy dư liệu từ file json
   return (

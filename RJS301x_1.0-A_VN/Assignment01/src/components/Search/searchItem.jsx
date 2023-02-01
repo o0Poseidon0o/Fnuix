@@ -1,4 +1,5 @@
 import React from "react";
+import "./SearchItem.css";
 
 // Cấu trúc hiển thị mỗi hotel
 const SearchItem = (props) => {
