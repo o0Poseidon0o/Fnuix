@@ -11,17 +11,17 @@ const DetailHotel = () => {
   // Lấy dữ liệu thừ file json
 
   return (
-    <Container className="detail-hotel">
+    <Container className="container detail-hotel">
       {/* component header */}
       <DetailHeader item={details} />
       {/* Component Photo */}
       <RenderPhoto item={details.photos} />
-      <div className="detail-description">
-        <div>
+      <div className="row detail-description">
+        <div className="col-md-9">
           <h3>{details.title}</h3>
           <p>{details.description}</p>
         </div>
-        <div>
+        <div className="col-md-3">
           <h4>Perfect for a 9-night stay!</h4>
           <p>
             Located in the real heart of Krakow, this property has an excellent

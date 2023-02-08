@@ -1,0 +1,12 @@
+@media (max-width: 500px) {
+  .intro img {
+    width: 200px;
+    position: absolute;
+    text-align: center;
+    left: 22%;
+    top: 80%;
+  }
+  #content {
+    margin-top: 150px;
+  }
+}

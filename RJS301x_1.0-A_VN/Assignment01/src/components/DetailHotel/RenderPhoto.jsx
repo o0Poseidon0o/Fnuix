@@ -3,7 +3,7 @@ import "./RenderPhoto.css";
 // Cấu trúc component photo detail
 const RenderPhoto = (props) => {
   return (
-    <div className="image">
+    <div className="container-fluid image">
       {props.item.map((image) => (
         <img src={image} alt=""></img>
       ))}

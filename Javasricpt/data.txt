@@ -1,0 +1,4 @@
+cau 1: Hay lam mot bai tho
+dap an: la 1
+cau 2: Co gan het suc
+dap an: la 2

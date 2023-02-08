@@ -13,21 +13,8 @@
   cursor: pointer;
 }
 
-.detail-description {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/*Phần description*/
-.detail-description > div:first-child {
-  max-width: 40rem;
-}
-
 /*Phần perfect for a 9 night stay*/
 .detail-description > div:last-child {
-  max-width: 12rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
