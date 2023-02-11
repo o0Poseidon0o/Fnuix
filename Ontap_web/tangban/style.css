@@ -115,6 +115,15 @@ body {
 .content__main-list {
   color: var(--text-color);
 }
+.close-modal {
+  width: 50px;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 99;
+}
+.hidden {
+  display: none;
+}
 /* ---------------------------footer----------------------------- */
 #footer {
   color: var(--text-color);

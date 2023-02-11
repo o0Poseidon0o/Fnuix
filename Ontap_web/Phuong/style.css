@@ -1,0 +1,147 @@
+:root {
+  --main-color: #facf23;
+  --second-color: #c7bb6b;
+  --text-color: #7a7867;
+  --third-color: #fbf5d3;
+}
+
+* {
+  font-family: "Playfair Display", serif;
+}
+body {
+  background-image: url(./img/huong1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* blend màu  */
+  background-blend-mode: soft-light;
+  background-color: #facf23;
+}
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url(./img/snow.png);
+  background-size: cover;
+  animation: animationSnow 4s ease-in-out infinite;
+}
+@keyframes animationSnow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(90px, 30vh);
+  }
+}
+/* ----------------------------- header------------------------ */
+.intro {
+  color: var(--text-color);
+  width: 100%;
+  height: 600px;
+  font-size: 40;
+  position: relative;
+}
+.intro img {
+  width: 300px;
+  position: absolute;
+  left: 7%;
+  top: 10%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.intro__header h1 {
+  font-size: 50px;
+}
+.intro__header {
+  text-align: center;
+  font-size: 30px;
+}
+.intro__header-content {
+  text-align: justify;
+  width: 900px;
+  position: relative;
+}
+.answer {
+  color: var(--second-color);
+  border-radius: 10px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.8);
+}
+.rounded-circle {
+  border-color: var(--text-color) !important;
+  border-width: 5px !important;
+}
+/* --------------------------content----------------------------- */
+
+#content h1 {
+  color: var(--third-color);
+  text-align: center;
+}
+.content__main img {
+  width: 150px;
+}
+.content__timeline-table td {
+  text-align: justify;
+  text-align: left;
+  color: var(--text-color);
+  font-size: 20px;
+}
+.content__timeline-table th {
+  color: var(--third-color);
+  font-size: 20px;
+}
+.content__timeline-table tr::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: var(--third-color);
+  border-radius: 50%;
+}
+
+.table {
+  border-collapse: collapse;
+  border-bottom: none;
+}
+.content__main-list img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.content__main-list {
+  color: var(--text-color);
+}
+.close-modal {
+  width: 50px;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 99;
+}
+.hidden {
+  display: none;
+}
+/* ---------------------------footer----------------------------- */
+#footer {
+  color: var(--text-color);
+  text-align: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.img_moitruong {
+  background-image: url(./img/moi_truong.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* blend màu  */
+  background-blend-mode: soft-light;
+  background-color: var(--main-color);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

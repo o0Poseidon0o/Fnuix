@@ -1,4 +1,9 @@
+"use strict";
+
 let container = document.getElementById("container");
+const btn_answer = document.querySelector(".answer");
+const btn_closemodal = document.querySelector(".close_modal");
+const modal = document.querySelector(".intro__header-content");
 let count = 50;
 for (var i = 0; i < 50; i++) {
   let leftSnow = Math.floor(Math.random() * container.clientWidth);
@@ -22,3 +27,14 @@ window.onload = function () {
   document.getElementById("myAudio").autoplay = true;
   document.getElementById("myAudio").load();
 };
+// Dieu khien modal
+// Dong modal
+
+btn_answer.addEventListener("click", function () {
+  modal.classList.remove("hidden");
+});
+
+const addhidden = function () {
+  modal.classList.add("hidden");
+};
+btn_closemodal.addEventListener("click", addhidden);
