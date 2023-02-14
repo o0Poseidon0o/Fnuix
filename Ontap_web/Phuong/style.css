@@ -3,10 +3,12 @@
   --second-color: #c7bb6b;
   --text-color: #7a7867;
   --third-color: #fbf5d3;
+  --main-font: "Playfair Display", serif;
+  --second-font: "Allura", cursive;
 }
 
 * {
-  font-family: "Playfair Display", serif;
+  font-family: var(--main-font);
 }
 body {
   background-image: url(./img/huong1.jpg);
@@ -86,25 +88,10 @@ body {
 .content__main img {
   width: 150px;
 }
-.content__timeline-table td {
-  text-align: justify;
-  text-align: left;
-  color: var(--text-color);
-  font-size: 20px;
+.content__timeline-header {
+  font-size: 400px;
+  font-family: var(--second-font);
 }
-.content__timeline-table th {
-  color: var(--third-color);
-  font-size: 20px;
-}
-.content__timeline-table tr::before {
-  content: "";
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background-color: var(--third-color);
-  border-radius: 50%;
-}
-
 .table {
   border-collapse: collapse;
   border-bottom: none;
@@ -125,6 +112,12 @@ body {
 .hidden {
   display: none;
 }
+.content__timeline img {
+  border: solid 5px var(--third-color);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
 /* ---------------------------footer----------------------------- */
 #footer {
   color: var(--text-color);
@@ -144,4 +137,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.img_moitruong img {
+  width: 400px;
 }
