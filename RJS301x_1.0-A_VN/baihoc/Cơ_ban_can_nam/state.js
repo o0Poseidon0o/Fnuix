@@ -6,6 +6,7 @@ function Counter() {
   const increment = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };
+  // Actions-->State-->View-->Actions
   return (
     <div>
       Value:{counter}
