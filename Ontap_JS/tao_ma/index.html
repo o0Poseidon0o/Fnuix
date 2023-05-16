@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuyển đổi đường link thành mã QR code</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Chuyển đổi đường link thành mã QR code</h1>
+      <form onsubmit="event.preventDefault(); generateQRCode()">
+        <input
+          type="text"
+          id="input-link"
+          placeholder="Nhập đường link cần chuyển đổi"
+        />
+        <button type="submit">Tạo mã QR code</button>
+      </form>
+      <div id="qrcode"></div>
+    </div>
+
+    <script src="./JS/qrcode.js">
+    </script>
+    <script src="./JS/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  </body>
+</html>
