@@ -19,67 +19,71 @@
   </head>
   <body>
     <!-- ------------------header----------------- -->
-    <i
-      class="bi bi-list mobile-nav-toggle d-xl-none"
-      onclick="toggleProfile()"
-    ></i>
-    <div class="d-flex flex-column profile">
-      <div class="profile__avatar">
-        <img src="./img/logodoan.png" alt="logodoan" />
-        <h1>
-          <a href="index.html">Chi Đoàn khu phố 1</a>
-        </h1>
-        <h1 class="text-light"><a href="index.html">Phường 12</a></h1>
-        <h1 class="text-light"><a href="index.html">Quận bình Thạnh</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="google"><i class="bi bi-google"></i></a>
-          <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
-        </div>
-      </div>
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="d-flex flex-column">
+        <div class="profile">
+          <img src="./img/logodoan.png" alt="logodoan" />
+          <h1>
+            <a href="index.html">Chi Đoàn khu phố 1</a>
+          </h1>
+          <h1 class="text-light"><a href="index.html">Phường 12</a></h1>
+          <h1 class="text-light"><a href="index.html">Quận bình Thạnh</a></h1>
+          <div class="social-links mt-3 text-center">
+            <a href="https://www.facebook.com/hoatdongkhupho1" class="facebook"
+              ><i class="bi bi-facebook"></i
+            ></a>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li>
-            <a href="#hero" class="nav-link scrollto active"
-              ><i class="bi bi-people"></i> <span>Về chúng tôi</span></a
-            >
-          </li>
-          <li>
-            <a href="#about" class="nav-link scrollto"
-              ><i class="bi bi-award"></i><span>Team hoạt động</span></a
-            >
-          </li>
-          <li>
-            <a href="#resume" class="nav-link scrollto"
-              ><i class="bi bi-alarm"></i> <span>Hoạt động trọng tâm</span></a
-            >
-          </li>
-          <li>
-            <a href="#portfolio" class="nav-link scrollto"
-              ><i class="bi bi-calendar2-week"></i>
-              <span>Lịch hoạt động</span></a
-            >
-          </li>
-          <li>
-            <a href="#services" class="nav-link scrollto"
-              ><i class="bi bi-images"></i><span>Hình ảnh hoạt động</span></a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="nav-link scrollto"
-              ><i class="bi bi-geo-alt"></i> <span>Địa điểm sinh hoạt</span></a
-            >
-          </li>
-        </ul>
-      </nav>
-      <!-- .nav-menu -->
-      <div class="footer">
-        <p>Copyright: Lê Minh Nhân</p>
-        <p>Designer: Lê Minh Nhân</p>
+            <a
+              href="https://www.youtube.com/watch?v=HSsMyHvQCv8&t=60s"
+              class="youtube"
+              ><i class="bi bi-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <nav id="navbar" class="nav-menu navbar">
+          <ul>
+            <li>
+              <a href="#hero" class="nav-link scrollto active"
+                ><i class="bi bi-people"></i> <span>Chúng tôi</span></a
+              >
+            </li>
+            <li>
+              <a href="#teams" class="nav-link scrollto"
+                ><i class="bi bi-award"></i><span>Team hoạt động</span></a
+              >
+            </li>
+            <li>
+              <a href="#important_action" class="nav-link scrollto"
+                ><i class="bi bi-alarm"></i> <span>Hoạt động trọng tâm</span></a
+              >
+            </li>
+            <li>
+              <a href="#calendar" class="nav-link scrollto"
+                ><i class="bi bi-calendar2-week"></i>
+                <span>Lịch hoạt động</span></a
+              >
+            </li>
+            <li>
+              <a href="#images" class="nav-link scrollto"
+                ><i class="bi bi-images"></i><span>Hình ảnh hoạt động</span></a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="nav-link scrollto"
+                ><i class="bi bi-geo-alt"></i>
+                <span>Địa điểm sinh hoạt</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- .nav-menu -->
       </div>
-      <!-- ------------footer------------------------ -->
-    </div>
+    </header>
+    <!-- End Header -->
+
     <!-- ======= Hero Section ======= -->
     <section
       id="hero"
@@ -98,11 +102,76 @@
     </section>
     <!-- End Hero -->
     <!-- ------------------main------------------- -->
-    <div class="container-fluid main-content">
-      <div class="history"></div>
-      <div class="intro-teams"></div>
-      <div class="calendar"></div>
-    </div>
+    <main id="main">
+      <section id="teams" class="history">
+        <div class="container">
+          <div class="teams-title">
+            <h2>TỔ CHỨC TẬP THỂ</h2>
+            <p>Quyết chí đồng lòng giải quyết vấn đề</p>
+          </div>
+          <div
+            id="teamsCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="teams-item">
+                  <p>Quyết tâm thực những việc tốt mỗi ngày</p>
+                  <img src="./img/chuong.jpg" alt="" />
+                  <h3>Nguyễn Hoàng Chương</h3>
+                  <h4>Ủy &amp; viên</h4>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="teams-item">
+                  <p>Quyết tâm thực những việc tốt mỗi ngày</p>
+                  <img src="./img/chuong.jpg" alt="" />
+                  <h3>Nguyễn Hoàng Chương</h3>
+                  <h4>Ủy &amp; viên</h4>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="teams-item">
+                  <p>Quyết tâm thực những việc tốt mỗi ngày</p>
+                  <img src="./img/thanh.jpg" alt="" />
+                  <h3>Nguyễn Hoàng Chương</h3>
+                  <h4>Ủy &amp; viên</h4>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#teamsCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#teamsCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="important_action"></section>
+      <section id="calendar"></section>
+      <section id="images"></section>
+      <section id="contact"></section>
+    </main>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
