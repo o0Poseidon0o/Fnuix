@@ -241,17 +241,6 @@
 .carousel-item .teams-item {
   text-align: center;
 }
-.custom-button {
-  background-color: red;
-  border-color: red;
-  color: white;
-}
-
-.custom-button:focus {
-  outline: none;
-}
-
-.custom-button:hover {
-  background-color: darkred;
-  border-color: darkred;
+.teams-item img {
+  width: 200px;
 }
