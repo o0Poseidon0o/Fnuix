@@ -8,6 +8,7 @@ import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/ErrorPage";
+import ProductDetailPage from "./pages/ProductDetail";
 
 // const routeDefinitions = createRoutesFromElements(
 //   <Route>
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
         ),
       },
       { path: "/products", element: <ProductsPage /> },
+      { path: "/products/:productId", element: <ProductDetailPage /> },
     ],
   },
   // {
@@ -43,6 +45,7 @@ const router = createBrowserRouter([
   // },
   // { path: "/products", element: <ProductsPage /> },
 ]);
+
 // const router = createBrowserRouter(routeDefinitions);
 function App() {
   return <RouterProvider router={router} />;
