@@ -24,15 +24,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>, //Thay đổi báo lỗi mặc định của REACT
     children: [
       {
-        path: "/",
+        path: "",
         element: (
           <p>
             <HomePage />
           </p>
         ),
       },
-      { path: "/products", element: <ProductsPage /> },
-      { path: "/products/:productId", element: <ProductDetailPage /> },
+      { path: "products", element: <ProductsPage /> },
+      { path: "products/:productId", element: <ProductDetailPage /> },
     ],
   },
   // {
