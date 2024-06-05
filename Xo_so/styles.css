@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kaushan+Script&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+/*Nút nhấn trên màng hình*/
+.nut_bam{
+    position: relative;
+}
+#startButton{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+}
+#spinButton{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+}
