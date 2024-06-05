@@ -35,7 +35,7 @@ function startSpin() {
     const fastDuration = 4000; // 4 giây đầu quay nhanh
     const slowDuration = 3000;  // 3 giây cuối quay chậm
     const totalEntries = remainingEntries.length;
-    const fastIntervalTime = 50; // Quay nhanh với mỗi số xuất hiện sau 50ms
+    const fastIntervalTime = 100; // Quay nhanh với mỗi số xuất hiện sau 50ms
     const slowIntervalTime = slowDuration / totalEntries; // Thời gian giữa mỗi lần hiển thị số trong 3 giây cuối
 
     let startTime = Date.now();
@@ -59,7 +59,7 @@ function startSpin() {
                     const winner = remainingEntries[randomIndex];
 
                     // Hiển thị số và tên của người trúng giải trên màn hình
-                    resultDiv.textContent = `${winner.number} - ${winner.name}`;
+                    resultDiv.innerHTML = `${winner.number} <br> ${winner.name}`;
 
                     // Xóa người trúng khỏi mảng remainingEntries
                     remainingEntries.splice(randomIndex, 1);

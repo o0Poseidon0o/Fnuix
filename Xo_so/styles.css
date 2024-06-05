@@ -2,27 +2,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kaushan+Script&display=swap');
 
 body {
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url("./img/bai_bien.jpg");
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 1); /* Màu trắng với độ mờ 50% */
     font-family: "Amatic SC", sans-serif;
     font-weight: 700;
     font-style: normal;
+    padding: 10px;
 }
-  
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Màu trắng với độ mờ 50% */
+}
+.content_logo img {
+    width: 400px;
+}
 /*Nút nhấn trên màng hình*/
 .nut_bam{
-    position: relative;
+   
+    align-items: center;
 }
 #startButton{
     position:absolute;
-    top: 50%;
-    left: 50%;
+    bottom: 10%;
+    left: 48%;
+    background-color: red;
+    font-size: 20px;
+    color:aliceblue;
 }
 #spinButton{
     position:absolute;
-    top: 50%;
-    left: 50%;
+    bottom: 10%;
+    left: 48%;
+    background-color: red;
+    font-size: 20px;
+    color: aliceblue;
 }
+/*Hien thi so quay*/
+#prizeName{
+    color: red;
+    font-size: 100px;
+}
+
+#result{
+    color: red;
+    font-size:150px;
+}
+
