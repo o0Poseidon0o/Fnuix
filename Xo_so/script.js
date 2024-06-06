@@ -1,18 +1,12 @@
-const prizesOrder = ['thirdPrize', 'secondPrize', 'firstPrize', 'specialPrize'];
-const prizeNames = ['Giải Ba', 'Giải Nhì', 'Giải Nhất', 'Giải Đặc Biệt'];
-let currentPrizeIndex = 0;
+// Đảm bảo mảng prizeNames có thứ tự khớp với các tùy chọn trong dropdown
+const prizeNames = ['Giải 9', 'Giải 8', 'Giải 7', 'Giải 6', 'Giải 5', 'Giải 4', 'Giải 3', 'Giải 2', 'Giải 1'];
 let remainingEntries = [];
+let selectedPrizeName = '';
 
-document.getElementById('startButton').addEventListener('click', function() {
-    if (currentPrizeIndex < prizesOrder.length) {
-        document.getElementById('prizeName').textContent = prizeNames[currentPrizeIndex];
-        document.getElementById('spinButton').style.display = 'block';
-        document.getElementById('startButton').style.display = 'none';
-        document.getElementById('result').textContent = ''; // Reset kết quả
-    }
-});
+function startSpinProcess() {
+    const prizeSelect = document.getElementById('prizeSelect');
+    selectedPrizeName = prizeNames[prizeSelect.selectedIndex]; // Cập nhật giá trị của selectedPrizeName khi nút được nhấn
 
-document.getElementById('spinButton').addEventListener('click', function() {
     if (remainingEntries.length === 0) {
         fetch('data.csv')
             .then(response => response.text())
@@ -22,59 +16,89 @@ document.getElementById('spinButton').addEventListener('click', function() {
                     const [number, name] = row.split(',');
                     return { number: number.trim(), name: name.trim() };
                 });
+                remainingEntries.sort(() => Math.random() - 0.5); // Đảo ngẫu nhiên để tạo hiệu ứng quay số
+
+                // Bắt đầu quay
                 startSpin();
             });
     } else {
         startSpin();
     }
+}
+
+document.getElementById('spinButton').addEventListener('click', startSpinProcess);
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        startSpinProcess();
+    }
 });
 
 function startSpin() {
+    if (remainingEntries.length === 0) {
+        alert('Không còn người tham gia để quay số.');
+        return;
+    }
+
     const resultDiv = document.getElementById('result');
-    let index = 0;
-    const fastDuration = 4000; // 4 giây đầu quay nhanh
-    const slowDuration = 3000;  // 3 giây cuối quay chậm
-    const totalEntries = remainingEntries.length;
-    const fastIntervalTime = 100; // Quay nhanh với mỗi số xuất hiện sau 50ms
-    const slowIntervalTime = slowDuration / totalEntries; // Thời gian giữa mỗi lần hiển thị số trong 3 giây cuối
+    const digitIntervalTime = 10; // Thời gian giữa mỗi lần hiển thị chữ số ngẫu nhiên
+    const randomSpinDuration = 2000; // Tổng thời gian quay số ngẫu nhiên trước khi hiển thị từng chữ số
+    const displayDuration = 1000; // Tổng thời gian hiển thị từng chữ số chính xác
 
-    let startTime = Date.now();
+    // Lấy người chiến thắng đầu tiên từ danh sách
+    const winningEntry = remainingEntries.shift();
+    const winningNumber = winningEntry.number;
+    const winningName = winningEntry.name;
+    const digits = winningNumber.split('');
+    let digitIndex = 0;
 
-    const interval = setInterval(() => {
-        if (Date.now() - startTime < fastDuration) {
-            // Quay nhanh
-            resultDiv.textContent = remainingEntries[Math.floor(Math.random() * remainingEntries.length)].number;
+    // Quay số ngẫu nhiên trước khi hiển thị từng chữ số chính xác
+    const randomSpinStartTime = Date.now();
+    const randomSpinInterval = setInterval(() => {
+        if (Date.now() - randomSpinStartTime < randomSpinDuration) {
+            // Hiển thị số ngẫu nhiên
+            let randomNumber = '';
+            for (let i = 0; i < digits.length; i++) {
+                randomNumber += Math.floor(Math.random() * 10);
+            }
+            resultDiv.textContent = randomNumber;
         } else {
-            // Dừng quay nhanh, bắt đầu quay chậm
-            clearInterval(interval);
-            const slowInterval = setInterval(() => {
-                if (index < remainingEntries.length) {
-                    resultDiv.textContent = remainingEntries[index].number;
-                    index++;
-                } else {
-                    clearInterval(slowInterval);
-
-                    // Chọn người trúng giải thưởng hiện tại
-                    const randomIndex = Math.floor(Math.random() * remainingEntries.length);
-                    const winner = remainingEntries[randomIndex];
-
-                    // Hiển thị số và tên của người trúng giải trên màn hình
-                    resultDiv.innerHTML = `${winner.number} <br> ${winner.name}`;
-
-                    // Xóa người trúng khỏi mảng remainingEntries
-                    remainingEntries.splice(randomIndex, 1);
-
-                    // Cập nhật chỉ số giải thưởng hiện tại
-                    currentPrizeIndex++;
-                    if (currentPrizeIndex >= prizesOrder.length) {
-                        currentPrizeIndex = 0; // Reset sau khi hoàn thành tất cả các giải thưởng
-                    }
-
-                    // Hiển thị nút cho giải thưởng tiếp theo
-                    document.getElementById('spinButton').style.display = 'none';
-                    document.getElementById('startButton').style.display = 'block';
-                }
-            }, slowIntervalTime);
+            clearInterval(randomSpinInterval);
+            // Bắt đầu hiển thị từng chữ số chính xác
+            spinDigit(0);
         }
-    }, fastIntervalTime);
+    }, digitIntervalTime);
+
+    function spinDigit(digitIndex) {
+        let spinStartTime = Date.now();
+        const interval = setInterval(() => {
+            if (Date.now() - spinStartTime < displayDuration) {
+                // Hiển thị chữ số ngẫu nhiên
+                let randomDigit = Math.floor(Math.random() * 10);
+                if (digitIndex === 0) {
+                    resultDiv.textContent = randomDigit;
+                } else {
+                    resultDiv.textContent = resultDiv.textContent.slice(0, digitIndex) + randomDigit + resultDiv.textContent.slice(digitIndex + 1);
+                }
+            } else {
+                clearInterval(interval);
+                // Hiển thị chữ số chính xác
+                if (digitIndex === 0) {
+                    resultDiv.textContent = digits[digitIndex];
+                } else {
+                    resultDiv.textContent = resultDiv.textContent.slice(0, digitIndex) + digits[digitIndex] + resultDiv.textContent.slice(digitIndex + 1);
+                }
+
+                // Nếu còn chữ số tiếp theo, tiếp tục quay
+                if (digitIndex < digits.length - 1) {
+                    spinDigit(digitIndex + 1);
+                } else {
+                    // Hiển thị tên của người trúng giải
+                    setTimeout(() => {
+                        resultDiv.innerHTML += `<br>${winningName} - ${selectedPrizeName}`;
+                    }, 1000); // Thời gian chờ trước khi hiển thị tên
+                }
+            }
+        }, digitIntervalTime);
+    }
 }
