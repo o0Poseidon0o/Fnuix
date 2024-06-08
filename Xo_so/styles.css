@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
-    background-image: url("https://i.pinimg.com/originals/82/29/eb/8229eb421903713a2210eed8d2aa1db3.jpg");
+    background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/07/09/anh-background-bien-de-thuong_025522761.jpg");
     background-size: cover;
     height: 100vh;
     margin: 0;
@@ -12,14 +12,15 @@ body {
 
 }
 
-
-
-
 .content_info{
     color:red;
+    font-size: 50px;
+    font-weight:bolder;
 }
-.content_title{
+.content_title {
     color: red;
+    font-size: 80px;
+    font-weight: bolder;
 }
 .content_logo img {
     max-width: 400px; /* Adjust logo size */
@@ -43,7 +44,7 @@ body {
     gap: 20px;
 }
 
-button {
+.nut_bam button {
     padding: 0;
     width: 200px;
     height: 200px;
@@ -90,3 +91,43 @@ button:hover {
     height: auto;
 }
 
+/* trung giải */
+.modal-fullscreen {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    
+}
+
+.modal-content-fullscreen {
+    height: 100%;
+    border-radius: 0;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: black;
+}
+.modal-body img{
+    width: 100%;
+    height: 100%;
+}
+#congratsMessage{
+    color: red;
+    position: absolute;
+    font-size: 100px;
+    font-weight: 700;
+}
+#toggleMusicButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+}

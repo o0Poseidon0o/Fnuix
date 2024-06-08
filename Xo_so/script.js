@@ -2,8 +2,13 @@
 const prizeNames = ['Giải 9', 'Giải 8', 'Giải 7', 'Giải 6', 'Giải 5', 'Giải 4', 'Giải 3', 'Giải 2', 'Giải 1'];
 let remainingEntries = [];
 let selectedPrizeName = '';
+let backgroundMusic; // Biến để lưu trữ âm thanh nền
 
 function startSpinProcess() {
+    // Phát nhạc khi bắt đầu quay
+    const spinSound = new Audio('/media/nhac_quayso.mp3');
+    spinSound.play();
+
     const prizeSelect = document.getElementById('prizeSelect');
     selectedPrizeName = prizeNames[prizeSelect.selectedIndex]; // Cập nhật giá trị của selectedPrizeName khi nút được nhấn
 
@@ -20,11 +25,18 @@ function startSpinProcess() {
 
                 // Bắt đầu quay
                 startSpin();
+
+                // Dừng nhạc khi kết thúc quay
+                spinSound.pause();
             });
     } else {
         startSpin();
+
+        // Dừng nhạc khi kết thúc quay
+        spinSound.pause();
     }
 }
+
 
 document.getElementById('spinButton').addEventListener('click', startSpinProcess);
 
@@ -40,10 +52,12 @@ function startSpin() {
         return;
     }
 
+    const spinSound = document.getElementById('spinSound');
+    const congratsSound = document.getElementById('congratsSound');
     const resultDiv = document.getElementById('result');
-    const digitIntervalTime = 10; // Thời gian giữa mỗi lần hiển thị chữ số ngẫu nhiên
-    const randomSpinDuration = 2000; // Tổng thời gian quay số ngẫu nhiên trước khi hiển thị từng chữ số
-    const displayDuration = 1000; // Tổng thời gian hiển thị từng chữ số chính xác
+    const digitIntervalTime = 50; // Thời gian giữa mỗi lần hiển thị chữ số ngẫu nhiên (tăng từ 10 lên 50)
+    const randomSpinDuration = 3000; // Tổng thời gian quay số ngẫu nhiên trước khi hiển thị từng chữ số (tăng từ 2000 lên 3000)
+    const displayDuration = 2000; // Tổng thời gian hiển thị từng chữ số chính xác (tăng từ 1000 lên 1500)
 
     // Lấy người chiến thắng đầu tiên từ danh sách
     const winningEntry = remainingEntries.shift();
@@ -51,6 +65,9 @@ function startSpin() {
     const winningName = winningEntry.name;
     const digits = winningNumber.split('');
     let digitIndex = 0;
+
+    // Phát âm thanh quay số
+    spinSound.play();
 
     // Quay số ngẫu nhiên trước khi hiển thị từng chữ số chính xác
     const randomSpinStartTime = Date.now();
@@ -93,12 +110,43 @@ function startSpin() {
                 if (digitIndex < digits.length - 1) {
                     spinDigit(digitIndex + 1);
                 } else {
+                    // Dừng âm thanh quay số
+                  
+                    spinSound.currentTime = 0;
+
                     // Hiển thị tên của người trúng giải
                     setTimeout(() => {
                         resultDiv.innerHTML += `<br>${winningName} - ${selectedPrizeName}`;
-                    }, 1000); // Thời gian chờ trước khi hiển thị tên
+                        // Hiển thị modal chúc mừng
+                        document.getElementById('congratsMessage').innerHTML = `Chúc mừng!<br>${winningName}<br>Số hiệu: ${winningNumber}<br>Giải thưởng: ${selectedPrizeName}`;
+                        const congratsModal = new bootstrap.Modal(document.getElementById('congratsModal'));
+                        congratsSound.play();
+                        congratsModal.show();
+
+                        // Tự động đóng modal sau 3 giây
+                        setTimeout(() => {
+                            congratsModal.hide();
+                        }, 5000);
+
+                    }, 1000); // Thời gian chờ trước khi hiển thị tên và modal chúc mừng
                 }
             }
         }, digitIntervalTime);
     }
 }
+
+// Thêm sự kiện để dừng nhạc khi giao diện không còn được hiển thị
+function handleVisibilityChange() {
+    if (document.hidden) {
+        // Giao diện không còn được hiển thị, tắt nhạc
+        backgroundMusic.pause();
+    } else {
+        // Giao diện được hiển thị trở lại, tiếp tục phát nhạc
+        backgroundMusic.play();
+    }
+}
+
+// Thêm sự kiện để dừng nhạc khi người dùng tắt ứng dụng
+window.addEventListener('beforeunload', function(event) {
+    backgroundMusic.pause();
+});
