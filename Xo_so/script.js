@@ -2,13 +2,11 @@
 const prizeNames = ['Giải 9', 'Giải 8', 'Giải 7', 'Giải 6', 'Giải 5', 'Giải 4', 'Giải 3', 'Giải 2', 'Giải 1'];
 let remainingEntries = [];
 let selectedPrizeName = '';
-let backgroundMusic =new Audio('./media/nhac_quayso.mp3'); // Biến để lưu trữ âm thanh nền
+let backgroundMusic = new Audio('./media/nhac_quayso.mp3'); // Biến để lưu trữ âm thanh nền
 
 function startSpinProcess() {
     // Phát nhạc khi bắt đầu quay
-    const spinSound = new Audio('/media/nhac_quayso.mp3');
-    spinSound.play();
-
+    backgroundMusic.play();
 
     const prizeSelect = document.getElementById('prizeSelect');
     selectedPrizeName = prizeNames[prizeSelect.selectedIndex]; // Cập nhật giá trị của selectedPrizeName khi nút được nhấn
@@ -26,18 +24,11 @@ function startSpinProcess() {
 
                 // Bắt đầu quay
                 startSpin();
-
-                // Dừng nhạc khi kết thúc quay
-                spinSound.pause();
             });
     } else {
         startSpin();
-
-        // Dừng nhạc khi kết thúc quay
-        spinSound.pause();
     }
 }
-
 
 document.getElementById('spinButton').addEventListener('click', startSpinProcess);
 
@@ -112,7 +103,7 @@ function startSpin() {
                     spinDigit(digitIndex + 1);
                 } else {
                     // Dừng âm thanh quay số
-                  
+                    spinSound.pause();
                     spinSound.currentTime = 0;
 
                     // Hiển thị tên của người trúng giải
@@ -147,7 +138,35 @@ function handleVisibilityChange() {
     }
 }
 
+// Thêm sự kiện để dừng nh
+
+
+// Thêm sự kiện để dừng nhạc khi giao diện không còn được hiển thị
+function handleVisibilityChange() {
+    if (document.hidden) {
+        // Giao diện không còn được hiển thị, tắt nhạc
+        backgroundMusic.pause();
+    } else {
+        // Giao diện được hiển thị trở lại, tiếp tục phát nhạc
+        backgroundMusic.play();
+    }
+}
+
 // Thêm sự kiện để dừng nhạc khi người dùng tắt ứng dụng
 window.addEventListener('beforeunload', function(event) {
     backgroundMusic.pause();
+});
+// Thêm sự kiện để dừng nhạc khi modal chúc mừng được tắt
+document.getElementById('congratsModal').addEventListener('hidden.bs.modal', function (event) {
+    backgroundMusic.pause();
+});
+// Thêm sự kiện để dừng nhạc khi modal chúc mừng được tắt và phát lại từ đầu
+document.getElementById('congratsModal').addEventListener('hidden.bs.modal', function (event) {
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0; // Đặt thời gian của nhạc về đầu
+});
+
+// Thêm sự kiện để phát lại nhạc từ đầu khi modal được hiển thị
+document.getElementById('congratsModal').addEventListener('shown.bs.modal', function (event) {
+    backgroundMusic.play();
 });
