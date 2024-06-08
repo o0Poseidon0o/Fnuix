@@ -5,8 +5,10 @@ let selectedPrizeName = '';
 let backgroundMusic = new Audio('./media/nhac_quayso.mp3'); // Biến để lưu trữ âm thanh nền
 
 function startSpinProcess() {
-    // Phát nhạc khi bắt đầu quay
-    backgroundMusic.play();
+    if (backgroundMusic.paused) {
+        // Phát nhạc khi bắt đầu quay
+        backgroundMusic.play();
+    }
 
     const prizeSelect = document.getElementById('prizeSelect');
     selectedPrizeName = prizeNames[prizeSelect.selectedIndex]; // Cập nhật giá trị của selectedPrizeName khi nút được nhấn
@@ -120,53 +122,11 @@ function startSpin() {
                             congratsModal.hide();
                         }, 5000);
 
-                    }, 1000); // Thời gian chờ trước khi hiển thị tên và modal chúc mừng
+                    }, 1000); // Th
+
                 }
             }
         }, digitIntervalTime);
     }
 }
 
-// Thêm sự kiện để dừng nhạc khi giao diện không còn được hiển thị
-function handleVisibilityChange() {
-    if (document.hidden) {
-        // Giao diện không còn được hiển thị, tắt nhạc
-        backgroundMusic.pause();
-    } else {
-        // Giao diện được hiển thị trở lại, tiếp tục phát nhạc
-        backgroundMusic.play();
-    }
-}
-
-// Thêm sự kiện để dừng nh
-
-
-// Thêm sự kiện để dừng nhạc khi giao diện không còn được hiển thị
-function handleVisibilityChange() {
-    if (document.hidden) {
-        // Giao diện không còn được hiển thị, tắt nhạc
-        backgroundMusic.pause();
-    } else {
-        // Giao diện được hiển thị trở lại, tiếp tục phát nhạc
-        backgroundMusic.play();
-    }
-}
-
-// Thêm sự kiện để dừng nhạc khi người dùng tắt ứng dụng
-window.addEventListener('beforeunload', function(event) {
-    backgroundMusic.pause();
-});
-// Thêm sự kiện để dừng nhạc khi modal chúc mừng được tắt
-document.getElementById('congratsModal').addEventListener('hidden.bs.modal', function (event) {
-    backgroundMusic.pause();
-});
-// Thêm sự kiện để dừng nhạc khi modal chúc mừng được tắt và phát lại từ đầu
-document.getElementById('congratsModal').addEventListener('hidden.bs.modal', function (event) {
-    backgroundMusic.pause();
-    backgroundMusic.currentTime = 0; // Đặt thời gian của nhạc về đầu
-});
-
-// Thêm sự kiện để phát lại nhạc từ đầu khi modal được hiển thị
-document.getElementById('congratsModal').addEventListener('shown.bs.modal', function (event) {
-    backgroundMusic.play();
-});
