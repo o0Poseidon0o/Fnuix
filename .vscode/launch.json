@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ChatServer",
+      "request": "launch",
+      "mainClass": "ChatServer",
+      "projectName": "Fnuix_e83b4fa3"
+    },
+    {
+      "type": "java",
+      "name": "ChatClient",
+      "request": "launch",
+      "mainClass": "ChatClient",
+      "projectName": "Fnuix_e83b4fa3"
+    },
+    {
+      "type": "java",
       "name": "test",
       "request": "launch",
       "mainClass": "test",
