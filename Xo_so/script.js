@@ -2,12 +2,13 @@
 const prizeNames = ['Giải 9', 'Giải 8', 'Giải 7', 'Giải 6', 'Giải 5', 'Giải 4', 'Giải 3', 'Giải 2', 'Giải 1'];
 let remainingEntries = [];
 let selectedPrizeName = '';
-let backgroundMusic; // Biến để lưu trữ âm thanh nền
+let backgroundMusic =new Audio('./media/nhac_quayso.mp3'); // Biến để lưu trữ âm thanh nền
 
 function startSpinProcess() {
     // Phát nhạc khi bắt đầu quay
     const spinSound = new Audio('/media/nhac_quayso.mp3');
     spinSound.play();
+
 
     const prizeSelect = document.getElementById('prizeSelect');
     selectedPrizeName = prizeNames[prizeSelect.selectedIndex]; // Cập nhật giá trị của selectedPrizeName khi nút được nhấn
