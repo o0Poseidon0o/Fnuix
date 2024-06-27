@@ -2,11 +2,23 @@
 const prizeNames = ['Giải 9', 'Giải 8', 'Giải 7', 'Giải 6', 'Giải 5', 'Giải 4', 'Giải 3', 'Giải 2', 'Giải 1'];
 let remainingEntries = [];
 let selectedPrizeName = '';
-let backgroundMusic = new Audio('./media/nhac_quayso.mp3'); // Biến để lưu trữ âm thanh nền
+const backgroundMusic = new Audio('./media/nhac_quayso.mp3'); // Biến để lưu trữ âm thanh nền
+
+function toggleSpinButton(isDisabled) {
+    const spinButton = document.getElementById('spinButton');
+    isDisabled ? spinButton.style.pointerEvents = "none" : spinButton.style.pointerEvents = "unset";
+}
 
 function startSpinProcess() {
+    toggleSpinButton(true);
+    toggleSpinButtonColor(true); // Thêm dòng này
+
     if (backgroundMusic.paused) {
         // Phát nhạc khi bắt đầu quay
+        backgroundMusic.play();
+    } else {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
         backgroundMusic.play();
     }
 
@@ -32,12 +44,24 @@ function startSpinProcess() {
     }
 }
 
-document.getElementById('spinButton').addEventListener('click', startSpinProcess);
+document.getElementById('spinButton').addEventListener('click', () => {
+    startSpinProcess();
+});
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         startSpinProcess();
     }
+});
+
+// Auto replay nhạc khi nhạc kết thúc
+backgroundMusic.addEventListener("ended", () => {
+    backgroundMusic.play();
+});
+
+// Khi web minimized hoặc in the background, pause nhạc
+document.addEventListener("visibilitychange", () => {
+    document.hidden ? backgroundMusic.pause() : backgroundMusic.play();
 });
 
 function startSpin() {
@@ -46,8 +70,6 @@ function startSpin() {
         return;
     }
 
-    const spinSound = document.getElementById('spinSound');
-    const congratsSound = document.getElementById('congratsSound');
     const resultDiv = document.getElementById('result');
     const digitIntervalTime = 50; // Thời gian giữa mỗi lần hiển thị chữ số ngẫu nhiên (tăng từ 10 lên 50)
     const randomSpinDuration = 3000; // Tổng thời gian quay số ngẫu nhiên trước khi hiển thị từng chữ số (tăng từ 2000 lên 3000)
@@ -59,9 +81,6 @@ function startSpin() {
     const winningName = winningEntry.name;
     const digits = winningNumber.split('');
     let digitIndex = 0;
-
-    // Phát âm thanh quay số
-    spinSound.play();
 
     // Quay số ngẫu nhiên trước khi hiển thị từng chữ số chính xác
     const randomSpinStartTime = Date.now();
@@ -104,29 +123,33 @@ function startSpin() {
                 if (digitIndex < digits.length - 1) {
                     spinDigit(digitIndex + 1);
                 } else {
-                    // Dừng âm thanh quay số
-                    spinSound.pause();
-                    spinSound.currentTime = 0;
-
                     // Hiển thị tên của người trúng giải
                     setTimeout(() => {
                         resultDiv.innerHTML += `<br>${winningName} - ${selectedPrizeName}`;
                         // Hiển thị modal chúc mừng
                         document.getElementById('congratsMessage').innerHTML = `Chúc mừng!<br>${winningName}<br>Số hiệu: ${winningNumber}<br>Giải thưởng: ${selectedPrizeName}`;
                         const congratsModal = new bootstrap.Modal(document.getElementById('congratsModal'));
-                        congratsSound.play();
                         congratsModal.show();
 
-                        // Tự động đóng modal sau 3 giây
+                        // Tự động đóng modal sau 5 giây
                         setTimeout(() => {
                             congratsModal.hide();
+                            toggleSpinButton(false);
+                            toggleSpinButtonColor(false); // Thêm dòng này
                         }, 5000);
-
-                    }, 1000); // Th
-
+                    }, 1000);
                 }
             }
         }, digitIntervalTime);
     }
 }
 
+// Thêm hoặc xóa lớp CSS để thay đổi màu nút
+function toggleSpinButtonColor(isActive) {
+    const spinButton = document.getElementById('spinButton');
+    if (isActive) {
+        spinButton.classList.add('spin-button-active');
+    } else {
+        spinButton.classList.remove('spin-button-active');
+    }
+}

@@ -1,58 +1,45 @@
+package java;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 
 public class ChatClient {
-    private static final String SERVER_IP = "localhost";
-    private static final int SERVER_PORT = 8080;
+    private static final String SERVER_ADDRESS = "localhost";
+    private static final int PORT = 12345;
 
     public static void main(String[] args) {
-        try {
-            Socket socket = new Socket(SERVER_IP, SERVER_PORT);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+        try (
+            Socket socket = new Socket(SERVER_ADDRESS, PORT);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))
+        ) {
+            System.out.println(in.readLine());
 
-            // Đọc và in thông báo chào mừng máy chủ
-            String welcomeMessage = reader.readLine();
-            System.out.println(welcomeMessage);
-
-            // Nhận đầu vào của người dùng cho tên người dùng
-            BufferedReader userInputReader = new BufferedReader(new InputStreamReader(System.in));       
-            
-            String username = userInputReader.readLine();
-            writer.println(username);
-
-            new Thread(() -> {
-                String serverMessage;
+            // Tạo luồng riêng để đọc thông điệp từ server và hiển thị trên giao diện người dùng
+            Thread readThread = new Thread(() -> {
                 try {
-                    while ((serverMessage = reader.readLine()) != null) {
-                        System.out.println(serverMessage);
+                    String serverResponse;
+                    while ((serverResponse = in.readLine()) != null) {
+                        System.out.println(serverResponse);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }).start();
+            });
+            readThread.start();
 
-            // Nhận thông tin đầu vào của người dùng và gửi tin nhắn đến máy chủ
+            // Đọc và gửi thông điệp từ người dùng đến server
             String userInput;
-            while ((userInput = userInputReader.readLine()) != null) {
-                if (userInput.equalsIgnoreCase("exit") || userInput.equalsIgnoreCase("quit")) {
-                    // Người dùng muốn thoát, gửi tín hiệu đến máy chủ
-                    writer.println("exit");
+            while ((userInput = stdIn.readLine()) != null) {
+                out.println(userInput);
+                if (userInput.equalsIgnoreCase("logout")) {
                     break;
                 }
-                writer.println(userInput);
             }
-
-            //Đóng tài nguyên
-            socket.close();
-            reader.close();
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
+
